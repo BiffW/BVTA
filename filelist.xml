@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Better Vanilla Turret Ammo Unstable" modversion="1.0.6" corepackage="False" gameversion="0.19.5.0">
+  <Item file="%ModDir%/override_chaingun.xml" />
+  <Item file="%ModDir%/override_coilgun.xml" />
+  <Item file="%ModDir%/override_depthcharge.xml" />
+  <Item file="%ModDir%/override_flakcannon.xml" />
+  <Item file="%ModDir%/override_pulselaser.xml" />
+  <Item file="%ModDir%/override_railgun.xml" />
+</contentpackage>
