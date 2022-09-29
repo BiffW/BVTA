@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 脉冲激光弹药箱 -->
   <Item name="" identifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">

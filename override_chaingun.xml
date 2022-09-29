@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 铅弹 -->
   <Item name="" identifier="chaingunbolt" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
