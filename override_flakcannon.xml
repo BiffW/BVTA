@@ -31,7 +31,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="681,878,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="50" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakbolt" spawnposition="ThisInventory" />
@@ -75,7 +75,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" depth="0.54" sourcerect="528,6,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="50" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakboltdirectional" spawnposition="ThisInventory" />
@@ -118,7 +118,7 @@
     </Deconstruct>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="800,878,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="50" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakboltphysicorium" spawnposition="ThisInventory" />
@@ -163,7 +163,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="917,878,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="50" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakboltexplosive" spawnposition="ThisInventory" />

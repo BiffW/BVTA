@@ -21,7 +21,7 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
     <Body width="128" height="85" density="11" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="50.0">
       <Attack structuredamage="2" damagetype="Blunt">
         <Affliction identifier="blunttrauma" strength="10" />
@@ -72,7 +72,7 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
     <Body width="128" height="85" density="12" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="50.0">
       <Attack structuredamage="2" damagetype="Blunt">
         <Affliction identifier="blunttrauma" strength="10" />
@@ -126,7 +126,7 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="267,64,41,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="138,380,129,88" depth="0.55" origin="0.5,0.5" />
     <Body width="128" height="85" density="11" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <AiTarget soundrange="10000" fadeouttime="50" />
     <Projectile characterusable="false" launchimpulse="50.0">
       <Attack structuredamage="2" damagetype="Blunt">
@@ -171,7 +171,7 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="524,259,41,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="270,379,129,88" depth="0.55" origin="0.5,0.5" />
     <Body width="128" height="85" density="12" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <AiTarget soundrange="10000" fadeouttime="50" />
     <Projectile characterusable="false" launchimpulse="50.0">
       <StatusEffect type="OnActive" target="This" duration="30" stackable="false">

@@ -30,7 +30,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="560,687,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="50" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" canbecombined="true" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" canbecombined="true" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="pulselaserbolt">
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="pulselaserbolt" spawnposition="ThisInventory" />
@@ -70,7 +70,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="918,687,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="50" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" canbecombined="true" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" canbecombined="true" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="pulselaserbolttrilaser">
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="pulselaserbolttrilaser" spawnposition="ThisInventory" />

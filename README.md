@@ -1,12 +1,11 @@
-# BVTA
-A mod for indie game Barotrauma  
+# BVTA RP
+A RP version of BVTA, the only difference is that this version disallow you to put ammunitions on the hotbar slots
 
-Last tested game version: 0.19.6.0  
+Last tested game version: 0.19.9.0  
 
 This mod overrides every ammunition for turrets to make them more convenient to use and easier to get.
 
 * All
-  - Can be put in the hotbar slots
   - Deconstruction yield changed
   - Price changed
 
