@@ -38,7 +38,7 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Depleted Fuel Ammo Box is sold by military merchants and armory merchants
 
 * Chaingun
-  - All ammo box cost changed
+  - All ammo box cost changed, lead ammo cheaper, others more expensive
   - All bolts have higher launch impulse, sever probability and less spread
   - Shredder bolts and Physicorium bolts have higher armor penetration
 

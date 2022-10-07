@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Item name="" identifier="flakcannonammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="flakcannonammoloader" amount="1" mincondition="1" />
@@ -42,7 +42,6 @@
       <Containable items="flakbolt" />
     </ItemContainer>
   </Item>
-
   <Item name="" identifier="flakcannondirectionalammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
@@ -86,7 +85,6 @@
       <Containable items="flakboltdirectional" />
     </ItemContainer>
   </Item>
-  
   <Item name="" identifier="flakcannonammoboxphysicorium" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
@@ -129,7 +127,6 @@
       <Containable items="flakboltphysicorium" />
     </ItemContainer>
   </Item>
-
   <Item name="" identifier="flakcannonammoboxexplosive" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
