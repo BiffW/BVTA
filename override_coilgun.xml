@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 标准弹药箱 -->
   <Item name="" identifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
@@ -187,11 +187,14 @@
     <Body width="160" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="80.0">
-      <Attack structuredamage="20" itemdamage="10" severlimbsprobability="0.25" penetration="0.4" targetforce="39"><!--加点冲击-->
-        <Affliction identifier="lacerations" strength="22" /><!--加点伤害-->
+      <Attack structuredamage="20" itemdamage="10" severlimbsprobability="0.25" penetration="0.4" targetforce="39">
+        <!--加点冲击-->
+        <Affliction identifier="lacerations" strength="22" />
+        <!--加点伤害-->
         <Affliction identifier="bleeding" strength="1.0" />
         <Affliction identifier="stun" strength="0.05" />
-        <Affliction identifier="radiationsickness" strength="6" /><!--解除辐射上限-->
+        <Affliction identifier="radiationsickness" strength="6" />
+        <!--解除辐射上限-->
       </Attack>
       <StatusEffect type="OnActive" target="This" lifetime="2">
         <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="5" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" colormultiplier="80,100,80" />

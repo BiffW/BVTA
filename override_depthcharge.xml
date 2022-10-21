@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 深水炸弹 -->
   <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy">
@@ -87,7 +87,7 @@
           <Affliction identifier="bleeding" strength="500" probability="0.05" />
           <Affliction identifier="stun" strength="30" />
         </Explosion>
-        <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false"/>
+        <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" />
         <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         <SpawnItem identifier="nuclearaftereffectemitter" spawnposition="This" />
       </StatusEffect>
@@ -190,7 +190,7 @@
           <Affliction identifier="bleeding" strength="500" probability="0.05" />
           <Affliction identifier="stun" strength="30" />
         </Explosion>
-        <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false"/>
+        <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" />
         <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
         <SpawnItem identifier="nuclearaftereffectemitter" spawnposition="This" />
       </StatusEffect>
