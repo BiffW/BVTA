@@ -32,7 +32,7 @@
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="100" severlimbsprobability="50" penetration="0.5" targetforce="1000">
-        <Affliction identifier="explosiondamage" strength="250" />
+        <Affliction identifier="explosiondamage" strength="750" />
         <Affliction identifier="bleeding" strength="50" />
         <Affliction identifier="stun" strength="15" />
       </Attack>
@@ -91,7 +91,7 @@
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="50" severlimbsprobability="50" penetration="0.5" targetforce="1000">
-        <Affliction identifier="explosiondamage" strength="250" />
+        <Affliction identifier="explosiondamage" strength="750" />
         <Affliction identifier="bleeding" strength="50" />
         <Affliction identifier="stun" strength="15" />
       </Attack>
@@ -145,6 +145,11 @@
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem identifier="physicorium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" requiredtime="80" amount="4">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="physicorium" amount="4" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,959,61,65" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,170,216,34" depth="0.55" origin="0.5,0.5" />
