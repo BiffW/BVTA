@@ -3,7 +3,7 @@ A RP version of BVTA, the only difference is that this version disallow you to p
 
 Last tested game version: 0.19.14.0  
 
-This mod overrides every ammunition for turrets to make them more convenient to use and easier to get.
+This mod overrides every ammunition for turrets to make them more convenient to use and easier to get
 
 * All
   - Deconstruction yield changed
@@ -33,7 +33,7 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Physicorium Ammo Box costs no lead
   - Explosive Ammo Box costs double C-4 and contains 200 rounds instead of 100
   - Piercing Ammo Box contains 200 rounds instead of 149
-  - Depleted Fuel Bolt afflicts more damage but less radiation sickness. However the maximum radiation sickness afflicted is no more limited.
+  - Depleted Fuel Bolt afflicts more damage but less radiation sickness. However the maximum radiation sickness afflicted is no more limited
   - Depleted Fuel Ammo Box is sold by military merchants and armory merchants
 
 * Chaingun
@@ -44,6 +44,8 @@ It also makes a lot of balance changes. (there can be missing some though)
 * Pulse Laser
   - Standard Fuel Box have 50 shots instead of 41
   - Tri-Laser Fuel Box have 50 shots instead of 29
+  - Removed bubbles to improve performance
+  - Changed color of Tri-Laser Beam for consistency
 
 * Depth Charges/Decoys
   - Launch impulse significantly increased
