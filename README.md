@@ -1,7 +1,7 @@
 # BVTA
 A mod for indie game Barotrauma  
 
-Last tested game version: 0.19.14.0  
+Last updated for game version: 0.20.3.0  
 
 This mod overrides every ammunition for turrets to make them more convenient to use and easier to get
 
@@ -26,9 +26,14 @@ It also makes a lot of balance changes. (there can be missing some though)
   - All shells have significantly higher sever probability
   - All shells (except canister) have 2 slots instead of 1
   - Steel Shell costs no iron and afflicts more damage
-  - Physicorium Shell costs no titanium and afflicts more damage
+  - Physicorium Shell costs more material and afflicts more damage
   - Nuclear Shell afflicts more damage
   - Canister Shell contains 24 pellets instead of 11
+
+* Flak Cannon
+  - Directional Bolt spawns 3 more shrapnels, and each sharpnel deals slightly more damage with increased severance probability
+  - Physicorium Flak Shell Boxes are now sold on higher difficulty
+  - Explosive ammo damage reverted to 0.19
 
 * Coilgun
   - Physicorium Ammo Box costs no lead
@@ -39,8 +44,9 @@ It also makes a lot of balance changes. (there can be missing some though)
 
 * Chaingun
   - All ammo box cost changed, lead ammo cheaper, others more expensive
-  - All bolts have higher launch impulse, sever probability and less spread
+  - All bolts have higher launch impulse, severance probability and less spread
   - Shredder bolts and Physicorium bolts have higher armor penetration
+  - Shredder Ammo Box contains 500 rounds instead of 400
 
 * Pulse Laser
   - Standard Fuel Box have 50 shots instead of 41

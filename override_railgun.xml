@@ -7,6 +7,7 @@
     <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.5" />
     <Price baseprice="55">
+    <!--改价格-->
       <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="3" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
@@ -17,6 +18,7 @@
     <Deconstruct time="10">
       <Item identifier="iron" />
       <Item identifier="carbon" />
+      <!--改产出-->
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
@@ -26,13 +28,18 @@
       <RequiredSkill identifier="weapons" level="25" />
       <RequiredItem identifier="steel" amount="4" />
     </Fabricate>
+    <!--加四倍配方-->
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="2,91,215,33" depth="0.55" origin="0.5,0.5" />
+    <!--改引用-->
     <Body width="215" height="30" density="30" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="100" severlimbsprobability="50" penetration="0.5" targetforce="1000">
+      <!--改断肢率-->
         <Affliction identifier="explosiondamage" strength="750" />
+        <!--加点伤害-->
         <Affliction identifier="bleeding" strength="50" />
         <Affliction identifier="stun" strength="15" />
       </Attack>
@@ -48,6 +55,7 @@
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
         <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="5" decal="explosion" decalsize="0.3" penetration="0.5">
+        <!--改断肢率-->
           <Affliction identifier="explosiondamage" strength="250" />
           <Affliction identifier="stun" strength="7" />
         </Explosion>
@@ -57,6 +65,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem" />
     </ItemContainer>
@@ -66,6 +75,7 @@
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
     <Price baseprice="470" minleveldifficulty="35">
+    <!--中期军事站点，城市军火商有售-->
       <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
       <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
@@ -74,8 +84,7 @@
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
     </Price>
     <Deconstruct time="10">
-      <Item identifier="iron" />
-      <Item identifier="carbon" />
+      <Item identifier="steel" />
       <Item identifier="uranium" />
       <Item identifier="incendium" />
     </Deconstruct>
@@ -85,24 +94,37 @@
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="ic4block" />
     </Fabricate>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="fuelrod" mincondition="50" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
     <InventoryIcon texture="%ModDir%/images/nuclearshell.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <!--改图标-->
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,131,217,33" depth="0.55" origin="0.5,0.5" />
+    <!--改引用-->
     <Body width="215" height="30" density="35" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="50" severlimbsprobability="50" penetration="0.5" targetforce="1000">
+      <!--改断肢率-->
         <Affliction identifier="explosiondamage" strength="750" />
+        <!--加点伤害-->
         <Affliction identifier="bleeding" strength="50" />
         <Affliction identifier="stun" strength="15" />
       </Attack>
       <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
-        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="5" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0">
+        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="5" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
+        <!--改断肢率-->
           <Affliction identifier="explosiondamage" strength="2000" />
           <Affliction identifier="burn" strength="2000" />
           <Affliction identifier="radiationsickness" strength="500" />
-          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="500" probability="0.05" dividebylimbcount="false" />
+          <!--加点伤害-->
           <Affliction identifier="stun" strength="30" />
         </Explosion>
         <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" />
@@ -120,6 +142,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem" />
     </ItemContainer>
@@ -129,6 +152,7 @@
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
     <Price baseprice="330" minleveldifficulty="35">
+    <!--改价格，中期有售-->
       <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
       <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
@@ -140,26 +164,33 @@
       <Item identifier="physicorium" />
       <Item identifier="titanium" />
       <Item identifier="aluminium" />
+      <!--改产出-->
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem identifier="physicorium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
+      <!--改配方-->
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="80" amount="4">
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem identifier="physicorium" amount="4" />
       <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
     </Fabricate>
+    <!--加四倍配方-->
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,959,61,65" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,170,216,34" depth="0.55" origin="0.5,0.5" />
+    <!--改引用-->
     <Body width="215" height="30" density="35" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="0" damagedoors="true">
       <Attack structuredamage="200" itemdamage="200" severlimbsprobability="200" penetration="0.8" targetforce="1000">
+      <!--改断肢率-->
         <Affliction identifier="explosiondamage" strength="3125" />
         <Affliction identifier="bleeding" strength="625" />
         <Affliction identifier="stun" strength="30" />
+        <!--加点伤害-->
       </Attack>
       <StatusEffect type="OnActive" target="This">
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
@@ -180,6 +211,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem" />
     </ItemContainer>
@@ -189,6 +221,7 @@
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" minamount="1" maxamount="2" spawnprobability="0.2" />
     <Price baseprice="59">
+    <!--改价格，出售数量-->
       <Price storeidentifier="merchantoutpost" multiplier="1.2" minavailable="3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="4" />
       <Price storeidentifier="merchantresearch" multiplier="1.2" minavailable="2" />
@@ -200,23 +233,28 @@
       <Item identifier="lead" mincondition="0.95" />
       <Item identifier="iron" />
       <Item identifier="carbon" />
+      <!--改产出-->
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
       <RequiredItem identifier="lead" />
       <RequiredItem identifier="steel" />
+      <!--改配方-->
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="8">
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="lead" />
       <RequiredItem tag="containershell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      <!--按tag取材料，给扩展mod用的-->
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers2.png" sourcerect="799,708,216,34" depth="0.55" origin="0.5,0.5" />
     <BrokenSprite texture="Content/Items/Containers/containers2.png" sourcerect="799,744,216,34" depth="0.55" origin="0.5,0.5" maxcondition="0" />
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="0,447,64,64" origin="0.5,0.5" />
     <Body width="215" height="30" density="35" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <!--改可放栏位-->
     <ItemContainer hideitems="true" capacity="24" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" spawnwithid="railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet">
+    <!--改弹丸数量-->
       <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
         <RequiredItem items="railguncanistershellpellet" type="Contained" />
       </StatusEffect>

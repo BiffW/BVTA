@@ -3,7 +3,7 @@
   <!-- 深水炸弹 -->
   <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="45" minavailable="1">
+    <Price baseprice="30" minavailable="1">
       <Price storeidentifier="merchantoutpost" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
@@ -12,17 +12,20 @@
     </Price>
     <Deconstruct time="10">
       <Item identifier="iron" />
-      <Item identifier="carbon" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+    <!--改加工时间-->
       <RequiredSkill identifier="weapons" level="25" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="iron" amount="2" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
+    <!--改贴图引用-->
     <Body width="128" height="85" density="11" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
-    <Projectile characterusable="false" launchimpulse="50.0">
+    <!--改可放栏位-->
+    <Projectile characterusable="false" launchimpulse="25.0">
+    <!--改发射冲量-->
       <Attack structuredamage="2" damagetype="Blunt">
         <Affliction identifier="blunttrauma" strength="10" />
       </Attack>
@@ -35,6 +38,7 @@
           <Affliction identifier="stun" strength="5" />
         </Explosion>
       </StatusEffect>
+      <!--加爆炸效果-->
       <StatusEffect type="OnImpact" target="Contained">
         <Use />
       </StatusEffect>
@@ -43,6 +47,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
@@ -59,31 +64,41 @@
     </Price>
     <Deconstruct time="20">
       <Item identifier="iron" />
-      <Item identifier="carbon" />
       <Item identifier="uranium" />
       <Item identifier="incendium" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+    <!--改加工时间-->
       <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="depthchargeshell" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="ic4block" />
     </Fabricate>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="depthchargeshell" />
+      <RequiredItem identifier="fuelrod" mincondition="50" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
+    <!--改贴图引用-->
     <Body width="128" height="85" density="12" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
-    <Projectile characterusable="false" launchimpulse="50.0">
+    <!--改可放栏位-->
+    <Projectile characterusable="false" launchimpulse="25.0">
+    <!--改发射冲量-->
       <Attack structuredamage="2" damagetype="Blunt">
         <Affliction identifier="blunttrauma" strength="10" />
       </Attack>
       <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
-        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="5" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0">
-          <Affliction identifier="explosiondamage" strength="5120" />
-          <Affliction identifier="burn" strength="2560" />
-          <Affliction identifier="radiationsickness" strength="853" />
+        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="2000" />
+          <Affliction identifier="burn" strength="2000" />
+          <Affliction identifier="radiationsickness" strength="500" />
+          <!--加点伤害-->
           <Affliction identifier="bleeding" strength="500" probability="0.05" />
           <Affliction identifier="stun" strength="30" />
         </Explosion>
@@ -99,6 +114,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
@@ -107,6 +123,7 @@
   <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="200" minavailable="2">
+    <!--改价格-->
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -115,20 +132,24 @@
     </Price>
     <Deconstruct time="10">
       <Item identifier="iron" />
-      <Item identifier="carbon" />
       <Item identifier="sonarbeacon" />
+      <!--改产出-->
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+    <!-- 改加工时间 -->
       <RequiredSkill identifier="weapons" level="25" />
-      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="depthchargeshell" />
       <RequiredItem identifier="sonarbeacon" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="267,64,41,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="138,380,129,88" depth="0.55" origin="0.5,0.5" />
+    <!--改贴图引用-->
     <Body width="128" height="85" density="11" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <!--改可放栏位-->
     <AiTarget soundrange="10000" fadeouttime="50" />
-    <Projectile characterusable="false" launchimpulse="50.0">
+    <Projectile characterusable="false" launchimpulse="25.0">
+    <!--改发射冲量-->
       <Attack structuredamage="2" damagetype="Blunt">
         <Affliction identifier="blunttrauma" strength="10" />
       </Attack>
@@ -140,6 +161,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
@@ -156,24 +178,26 @@
     </Price>
     <Deconstruct time="20">
       <Item identifier="iron" />
-      <Item identifier="carbon" />
       <Item identifier="uranium" />
       <Item identifier="incendium" />
       <Item identifier="sonarbeacon" />
+      <!--改产出-->
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+    <!--改加工时间-->
       <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="uranium" />
-      <RequiredItem identifier="ic4block" />
+      <RequiredItem identifier="nucleardepthcharge" />
       <RequiredItem identifier="sonarbeacon" />
     </Fabricate>
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="524,259,41,61" origin="0.5,0.5" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="64,704,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="270,379,129,88" depth="0.55" origin="0.5,0.5" />
+    <!--改贴图引用-->
     <Body width="128" height="85" density="12" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <!--改可放栏位-->
     <AiTarget soundrange="10000" fadeouttime="50" />
     <Projectile characterusable="false" launchimpulse="50.0">
+    <!--改发射冲量-->
       <StatusEffect type="OnActive" target="This" duration="30" stackable="false">
         <sound file="Content/Items/Weapons/SonarDecoy.ogg" type="OnActive" range="50000" loop="true" />
       </StatusEffect>
@@ -183,10 +207,11 @@
       <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
-        <Explosion range="1500.0" structuredamage="600" ballastfloradamage="1000" force="50.0" severlimbsprobability="5" decal="explosion" decalsize="1.0" camerashake="500" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0">
-          <Affliction identifier="explosiondamage" strength="5120" />
-          <Affliction identifier="burn" strength="2560" />
-          <Affliction identifier="radiationsickness" strength="853" />
+        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="2000" />
+          <Affliction identifier="burn" strength="2000" />
+          <Affliction identifier="radiationsickness" strength="500" />
+          <!--加点伤害-->
           <Affliction identifier="bleeding" strength="500" probability="0.05" />
           <Affliction identifier="stun" strength="30" />
         </Explosion>
@@ -202,6 +227,7 @@
       </StatusEffect>
     </Projectile>
     <ItemContainer hideitems="true" capacity="2" maxstacksize="1" canbeselected="false">
+    <!--加容量-->
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
