@@ -17,17 +17,15 @@
         <ParticleEmitter particle="muzzleflashpulselaser" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" />
         <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="255,200,225,180" />
         <!--删气泡-->
+        <Explosion range="150.0" ballastfloradamage="50" structuredamage="50" itemdamage="250" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" >
+          <Affliction identifier="burn" strength="100" />
+          <Affliction identifier="stun" strength="3" />
+        </Explosion>
       </StatusEffect>
       <StatusEffect type="OnImpact" target="UseTarget">
         <Conditional entitytype="eq Structure"/>
         <Conditional hastag="eq door"/>
         <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <Explosion range="150.0" ballastfloradamage="50" structuredamage="50" itemdamage="250" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" >
-          <Affliction identifier="burn" strength="100" />
-          <Affliction identifier="stun" strength="3" />
-        </Explosion>
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
@@ -51,17 +49,15 @@
         <ParticleEmitter particle="muzzleflashpulselaserfulgurium" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" />
         <!--改粒子-->
         <ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="255,200,225,180" />
+        <Explosion range="100.0" ballastfloradamage="35" structuredamage="35" itemdamage="200" force="7.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" >
+          <Affliction identifier="burn" strength="70" />
+          <Affliction identifier="stun" strength="2" />
+        </Explosion>
       </StatusEffect>
       <StatusEffect type="OnImpact" target="UseTarget">
         <Conditional entitytype="eq Structure"/>
         <Conditional hastag="eq door"/>
         <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <Explosion range="100.0" ballastfloradamage="35" structuredamage="35" itemdamage="200" force="7.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" >
-          <Affliction identifier="burn" strength="70" />
-          <Affliction identifier="stun" strength="2" />
-        </Explosion>
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This">
         <Remove />

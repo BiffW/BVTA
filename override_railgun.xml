@@ -46,19 +46,20 @@
       <StatusEffect type="OnActive" target="This">
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
       </StatusEffect>
-      <StatusEffect type="OnImpact" target="Contained" allowwhenbroken="true">
+      <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
         <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
         <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
         <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
-        <Use />
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
         <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="5" decal="explosion" decalsize="0.3" penetration="0.5">
         <!--改断肢率-->
           <Affliction identifier="explosiondamage" strength="250" />
           <Affliction identifier="stun" strength="7" />
         </Explosion>
+      </StatusEffect>
+      <!-- Trigger explosions on contained items -->
+      <StatusEffect type="OnBroken" target="Contained" >
+        <Use />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
@@ -117,7 +118,7 @@
       </Attack>
       <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
       <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
-      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" setvalue="true" allowwhenbroken="true">
         <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="5" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
         <!--改断肢率-->
           <Affliction identifier="explosiondamage" strength="2000" />
@@ -197,13 +198,15 @@
       </StatusEffect>
       <StatusEffect type="OnImpact" target="Contained" allowwhenbroken="true">
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
-        <Use />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
         <Explosion range="350.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
           <Affliction identifier="explosiondamage" strength="250" />
           <Affliction identifier="stun" strength="7" />
         </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="Contained">
+        <Use />
       </StatusEffect>
       <!-- Remove the item after exploding -->
       <StatusEffect type="OnBroken" target="This">
