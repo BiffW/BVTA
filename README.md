@@ -1,7 +1,7 @@
 # BVTA
 A mod for indie game Barotrauma  
 
-Last updated for game version: 0.20.3.0  
+Last updated for game version: 0.20.6.0  
 
 This mod overrides every ammunition for turrets to make them more convenient to use and easier to get
 
