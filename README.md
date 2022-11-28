@@ -1,8 +1,6 @@
 # BVTA
 A mod for indie game Barotrauma  
 
-Last updated for game version: 0.20.6.0  
-
 This mod overrides every ammunition for turrets to make them more convenient to use and easier to get
 
 * All
@@ -10,7 +8,7 @@ This mod overrides every ammunition for turrets to make them more convenient to 
   - Deconstruction yield changed
   - Price changed
 
-* Ammobox
+* Ammo boxes
   - Can be combined
   - Can use different ammobox of the same turret as "recycle" material
 
