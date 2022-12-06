@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 深水炸弹 -->
-  <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true">
+  <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="30" minavailable="1">
@@ -44,7 +44,7 @@
         </Explosion>
         <Use />
       </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" delay="0.2">
+      <StatusEffect type="OnBroken" target="This" delay="0.01">
         <Remove />
       </StatusEffect>
     </Projectile>
@@ -55,7 +55,7 @@
     </ItemContainer>
   </Item>
   <!-- 核深水炸弹 -->
-  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true">
+  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="450" sold="false">
@@ -80,7 +80,7 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
       <RequiredSkill identifier="electrical" level="40" />
       <RequiredItem identifier="depthchargeshell" />
-      <RequiredItem identifier="fuelrod" mincondition="0.8" />
+      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
       <RequiredItem identifier="uex" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
@@ -122,7 +122,7 @@
       <StatusEffect type="OnBroken" target="contained">
         <Use/>
       </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" delay="0.2">
+      <StatusEffect type="OnBroken" target="This" delay="0.01">
         <Remove />
       </StatusEffect>
     </Projectile>
@@ -166,7 +166,7 @@
     <Projectile characterusable="false" launchimpulse="25.0">
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" IsOn="true" Indestructible="false" />
-      <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" />
+      <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" setvalue="true" condition="-200" />
       <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
         <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.2" scalemax="0.35" />
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
@@ -175,7 +175,7 @@
         <Use />
         <particleemitter particle="shrapnel" drawontop="true" particleamount="100" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.2" scalemax="0.35" />
       </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" delay="0.2">
+      <StatusEffect type="OnBroken" target="This" delay="0.01">
         <Remove />
       </StatusEffect>
     </Projectile>
@@ -224,7 +224,7 @@
     <Projectile characterusable="false" launchimpulse="25.0">
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" IsOn="true" Indestructible="false" />
-      <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" />
+      <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" setvalue="true" condition="-200" />
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
         <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
@@ -253,7 +253,7 @@
       <StatusEffect type="OnBroken" target="Contained">
         <Use />
       </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" delay="0.2">
+      <StatusEffect type="OnBroken" target="This" delay="0.01">
         <Remove />
       </StatusEffect>
     </Projectile>

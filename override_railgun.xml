@@ -97,7 +97,7 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
       <RequiredSkill identifier="electrical" level="40" />
       <RequiredItem identifier="steel" />
-      <RequiredItem identifier="fuelrod" mincondition="0.8" />
+      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
       <RequiredItem identifier="uex" />
     </Fabricate>
     <InventoryIcon texture="%ModDir%/images/nuclearshell.png" sourcerect="0,0,64,64" origin="0.5,0.5" />

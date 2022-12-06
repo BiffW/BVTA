@@ -29,7 +29,7 @@
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="phosphorus" />
       <RequiredItem identifier="steel" />
-      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <!--按tag取材料-->
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="681,878,95,78" origin="0.5,0.5" />
@@ -66,9 +66,9 @@
         <Explosion range="30.0" structuredamage="20" camerashake="25.0" camerashakerange="2000" force="10.0" itemdamage="15" severlimbsprobability="0.1" decal="explosion" decalsize="0.3">
           <Affliction identifier="explosiondamage" strength="20" />
         </Explosion>
-        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" volume="5" selectionmode="Random" range="20000" dontmuffle="true" />
-        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" volume="5" selectionmode="Random" range="20000" dontmuffle="true" />
-        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" volume="5" selectionmode="Random" range="20000" dontmuffle="true" />
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" volume="2" selectionmode="Random" range="20000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" volume="2" selectionmode="Random" range="20000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" volume="2" selectionmode="Random" range="20000" />
         <ParticleEmitter particle="shrapnel" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1" scalemax="2" />
         <RemoveItem />
       </StatusEffect>
@@ -142,7 +142,7 @@
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="phosphorus" />
       <RequiredItem identifier="lead" amount="2" />
-      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <!--按tag取材料-->
     </Fabricate>
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" depth="0.54" sourcerect="528,6,95,78" origin="0.5,0.5" />
@@ -184,7 +184,7 @@
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem identifier="physicorium" />
       <RequiredItem identifier="phosphorus" />
-      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <!--按tag取材料-->
     </Fabricate>
     <Deconstruct time="10">
@@ -227,8 +227,8 @@
         <Explosion range="30.0" structuredamage="20" force="10.0" camerashake="50.0" camerashakerange="2000" itemdamage="15" severlimbsprobability="0.1" decal="explosion" decalsize="0.3">
           <Affliction identifier="explosiondamage" strength="20" />
         </Explosion>
-        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" volume="5" selectionmode="Random" range="20000" dontmuffle="true" />
-        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" volume="5" selectionmode="Random" range="20000" dontmuffle="true" />
+        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" volume="2" selectionmode="Random" range="20000" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" volume="2" selectionmode="Random" range="20000" />
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="20" velocitymin="100" velocitymax="2000" scalemin="1" scalemax="2" />
         <RemoveItem />
       </StatusEffect>
@@ -314,7 +314,7 @@
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="c4block" amount="2" />
       <RequiredItem identifier="steel" />
-      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      <RequiredItem tag="flakcannonammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <!--按tag取材料-->
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="917,878,95,78" origin="0.5,0.5" />
