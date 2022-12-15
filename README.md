@@ -6,7 +6,7 @@ This mod overrides every ammunition for turrets to make them more convenient to 
 * All
   - Can be put in the hotbar slots
   - Deconstruction yield changed
-  - Price changed
+  - Price changed (mostly lowered, some increased)
 
 * Ammo boxes
   - Can be combined
@@ -47,12 +47,11 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Shredder Ammo Box contains 500 rounds instead of 400
 
 * Pulse Laser
-  - Standard Fuel Box have 50 shots instead of 41
-  - Tri-Laser Fuel Box have 50 shots instead of 29
+  - Standard Fuel Box contains fuel for 50 shots instead of 41
+  - Tri-Laser Fuel Box contains fuel for 50 shots instead of 29
   - Removed bubbles to improve performance
   - Changed color of Tri-Laser Beam for consistency
 
 * Depth Charges/Decoys
   - Launch impulse significantly increased
   - Have 2 slots instead of 1
-  - Depth Charge now explodes on impact
