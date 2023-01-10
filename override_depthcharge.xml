@@ -36,11 +36,12 @@
       </StatusEffect>
       <StatusEffect type="OnBroken" target="Contained">
         <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="15" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="250" dividebylimbcount="true" />
-          <!--加点伤害-->
+          <Affliction identifier="explosiondamage" strength="125" dividebylimbcount="true" />
           <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="7" />
+          <Affliction identifier="explosiondamage" strength="10" multiplybymaxvitality="true" />
+          <!--加点伤害-->
         </Explosion>
         <Use />
       </StatusEffect>
@@ -104,12 +105,16 @@
            camerashake="1000" camerashakerange="50000"
            flashrange="10000" flashduration="5.0"
            screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="2000" />
-          <Affliction identifier="burn" strength="2000" />
-          <!--加点伤害-->
+          <Affliction identifier="explosiondamage" strength="1000" />
+          <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
           <Affliction identifier="bleeding" strength="500" probability="0.05" />
           <Affliction identifier="stun" strength="30" />
+          <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
+          <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
+          <Affliction identifier="radiationsickness" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
+          <!--加点伤害-->
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
         </Explosion>
@@ -172,6 +177,14 @@
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="Contained">
+        <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="15" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="125" dividebylimbcount="true" />
+          <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="7" />
+          <Affliction identifier="explosiondamage" strength="10" multiplybymaxvitality="true" />
+        </Explosion>
+        <!--加爆炸-->
         <Use />
         <particleemitter particle="shrapnel" drawontop="true" particleamount="100" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.2" scalemax="0.35" />
       </StatusEffect>
@@ -235,12 +248,16 @@
            camerashake="1000" camerashakerange="50000"
            flashrange="10000" flashduration="5.0"
            screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="2000" />
-          <Affliction identifier="burn" strength="2000" />
-          <!--加点伤害-->
+          <Affliction identifier="explosiondamage" strength="1000" />
+          <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
           <Affliction identifier="bleeding" strength="500" probability="0.05" />
           <Affliction identifier="stun" strength="30" />
+          <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
+          <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
+          <Affliction identifier="radiationsickness" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
+          <!--加点伤害-->
           <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
           <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
         </Explosion>

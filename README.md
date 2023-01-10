@@ -37,6 +37,7 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Physicorium Ammo Box costs no lead
   - Explosive Ammo Box costs double C-4 and contains 200 rounds instead of 100
   - Piercing Ammo Box contains 200 rounds instead of 149
+  - Piercing Bolt afflicts more damage and have a red projectile trace
   - Depleted Fuel Bolt afflicts more damage but less radiation sickness. However the maximum radiation sickness afflicted is no more limited
   - Depleted Fuel Ammo Box is sold by military merchants and armory merchants
 
@@ -50,8 +51,9 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Standard Fuel Box contains fuel for 50 shots instead of 41
   - Tri-Laser Fuel Box contains fuel for 50 shots instead of 29
   - Removed bubbles to improve performance
-  - Changed color of Tri-Laser Beam for consistency
+  - Changed color of Tri-Laser Beam to yellow for consistency
 
 * Depth Charges/Decoys
   - Launch impulse significantly increased
+  - Increased damage against abyss beasts
   - Have 2 slots instead of 1

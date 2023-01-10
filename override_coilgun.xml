@@ -1,5 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
+  <!--电磁枪穿甲弹-->
+  <Item name="" identifier="coilgunboltpiercing" category="Weapon" scale="0.5" sonarsize="2" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="144,447,112,12" depth="0.55" />
+    <Body width="160" height="10" density="20" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="2" damagedoors="true">
+      <Attack structuredamage="10" itemdamage="10" severlimbsprobability="0.1" penetration="0.5">
+        <Affliction identifier="lacerations" strength="12" />
+        <!--加点伤害-->
+        <Affliction identifier="bleeding" strength="2" />
+        <Affliction identifier="stun" strength="0.0125" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" lifetime="2">
+        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="5" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" colormultiplier="255,166,166,175" />
+        <!--改个颜色-->
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="3">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" condition="-50" />
+      <StatusEffect type="OnBroken" target="This">
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.5" scalemax="0.75" />
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="*0.5" />
+  </Item>
   <!-- 标准弹药箱 -->
   <Item name="" identifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="coilgunammoloader" amount="2" mincondition="1" />
@@ -39,7 +66,7 @@
     <Body width="115" height="88" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
-    <ItemContainer hideitems="true" capacity="2" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunbolt">
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunbolt">
     <!--加一发初始弹药，给手持舰载武器mod用的-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="coilgunbolt" spawnposition="ThisInventory" />
@@ -89,7 +116,7 @@
     <Body width="115" height="88" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
-    <ItemContainer hideitems="true" capacity="2" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="physicoriumbolt">
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="physicoriumbolt">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="physicoriumbolt" spawnposition="ThisInventory" />
@@ -140,7 +167,7 @@
     <Body width="115" height="88" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
-    <ItemContainer hideitems="true" capacity="2" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunboltexplosive">
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunboltexplosive">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="coilgunboltexplosive" spawnposition="ThisInventory" />
@@ -189,7 +216,7 @@
     <Body width="115" height="88" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
-    <ItemContainer hideitems="true" capacity="2" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunboltpiercing">
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunboltpiercing">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="coilgunboltpiercing" spawnposition="ThisInventory" />
@@ -213,7 +240,7 @@
         <!--加点伤害-->
         <Affliction identifier="bleeding" strength="1.0" />
         <Affliction identifier="stun" strength="0.05" />
-        <Affliction identifier="radiationsickness" strength="6" />
+        <Affliction identifier="radiationsickness" strength="6" multiplybymaxvitality="true" />
         <!--解除辐射上限,下调数值-->
       </Attack>
       <StatusEffect type="OnActive" target="This" lifetime="2">
@@ -269,7 +296,7 @@
     <Body width="115" height="88" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
-    <ItemContainer hideitems="true" capacity="2" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="depletedfuelbolt">
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="depletedfuelbolt">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="depletedfuelbolt" spawnposition="ThisInventory" />
