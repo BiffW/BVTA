@@ -190,7 +190,7 @@
       <!--按tag取材料-->
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="800,687,95,78" origin="0.5,0.5" />
-    <Body width="115" height="88" density="50" />
+    <Body width="115" height="88" density="30" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="chaingunboltphysicorium">
@@ -242,7 +242,7 @@
     </Fabricate>
     <Sprite texture="%ModDir%/images/shredder.png" depth="0.54" sourcerect="0,0,95,78" origin="0.5,0.5" />
     <!--改贴图，我不喜欢绿的-->
-    <Body width="115" height="88" density="50" />
+    <Body width="115" height="88" density="30" />
     <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改栏位，可合并-->
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="chaingunboltshredder">

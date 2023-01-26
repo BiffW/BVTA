@@ -13,20 +13,20 @@
     </Price>
     <Deconstruct time="10">
       <Item identifier="iron" />
+      <Item identifier="uex" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <!--改加工时间-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
       <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="uex" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="512,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
-    <Body width="128" height="85" density="11" />
-    <!--改密度-->
+    <Body width="128" height="85" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
-    <Projectile characterusable="false" launchimpulse="25.0">
+    <Projectile characterusable="false" launchimpulse="10.0">
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" Indestructible="false" />
       <StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100" />
@@ -34,9 +34,15 @@
         <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+      </StatusEffect>
       <StatusEffect type="OnBroken" target="Contained">
-        <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="15" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="125" dividebylimbcount="true" />
+        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
+        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
           <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="7" />
@@ -54,6 +60,10 @@
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
   </Item>
   <!-- 核深水炸弹 -->
   <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
@@ -71,27 +81,25 @@
       <Item identifier="uranium" />
       <Item identifier="incendium" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <!--改加工时间-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
       <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="depthchargeshell" />
+      <RequiredItem identifier="iron" amount="2" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="ic4block" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
       <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="depthchargeshell" />
+      <RequiredItem identifier="iron" amount="2" />
       <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
       <RequiredItem identifier="uex" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
-    <Body width="128" height="85" density="12" />
-    <!--改密度-->
+    <Body width="128" height="85" density="20" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
-    <Projectile characterusable="false" launchimpulse="25.0">
+    <Projectile characterusable="false" launchimpulse="10.0">
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" Indestructible="false" />
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
@@ -108,16 +116,14 @@
           <Affliction identifier="explosiondamage" strength="1000" />
           <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
-          <Affliction identifier="bleeding" strength="500" probability="0.05" />
+          <Affliction identifier="bleeding" strength="500" probability="0.05" multiplybymaxvitality="true" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="30" />
           <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
           <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
-          <Affliction identifier="radiationsickness" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
-          <Affliction identifier="bleeding" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
           <!--加点伤害-->
-          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
-          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
         </Explosion>
+        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
         <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
           <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
         </Explosion>
@@ -141,8 +147,7 @@
   <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" health="200" indestructible="true">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="200" minavailable="2">
-      <!--改价格-->
+    <Price baseprice="180" minavailable="2">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -152,23 +157,23 @@
     <Deconstruct time="10">
       <Item identifier="iron" />
       <Item identifier="sonarbeacon" />
+      <Item identifier="uex" />
       <!--改产出-->
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
-      <!-- 改加工时间 -->
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
-      <RequiredItem identifier="depthchargeshell" />
+      <RequiredItem identifier="iron" amount="2" />
       <RequiredItem identifier="sonarbeacon" />
+      <RequiredItem identifier="uex" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="267,64,41,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="138,380,129,88" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
-    <Body width="128" height="85" density="11" />
-    <!--改密度-->
+    <Body width="128" height="85" density="15" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <AiTarget maxsoundrange="10000" maxsightrange="6000" />
-    <Projectile characterusable="false" launchimpulse="25.0">
+    <Projectile characterusable="false" launchimpulse="10.0">
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" IsOn="true" Indestructible="false" />
       <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" setvalue="true" condition="-200" />
@@ -177,8 +182,8 @@
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="Contained">
-        <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="15" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="125" dividebylimbcount="true" />
+        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
           <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="7" />
@@ -230,11 +235,11 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="64,704,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="270,379,129,88" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
-    <Body width="128" height="85" density="12" />
+    <Body width="128" height="85" density="15" />
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <AiTarget maxsoundrange="10000" maxsightrange="6000" />
-    <Projectile characterusable="false" launchimpulse="25.0">
+    <Projectile characterusable="false" launchimpulse="10.0">
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" IsOn="true" Indestructible="false" />
       <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" setvalue="true" condition="-200" />
@@ -243,7 +248,13 @@
         <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+      </StatusEffect>
       <StatusEffect type="OnBroken" target="this">
+        <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
         <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0"
            camerashake="1000" camerashakerange="50000"
            flashrange="10000" flashduration="5.0"
@@ -251,15 +262,11 @@
           <Affliction identifier="explosiondamage" strength="1000" />
           <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
-          <Affliction identifier="bleeding" strength="500" probability="0.05" />
+          <Affliction identifier="bleeding" strength="500" probability="0.05" multiplybymaxvitality="true" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="30" />
           <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
           <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
-          <Affliction identifier="radiationsickness" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
-          <Affliction identifier="bleeding" strength="5" multiplybymaxvitality="true" dividebylimbcount="false" />
           <!--加点伤害-->
-          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
-          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" type="OnUse" volume="10" selectionmode="Random" range="50000" dontmuffle="true" />
         </Explosion>
         <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
           <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />

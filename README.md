@@ -18,20 +18,21 @@ This mod overrides every ammunition for turrets to make them more convenient to 
 * Chaingun Shredder Ammunition Box
   - Old sprite (I personally don't like the new green one)
 
-It also makes a lot of balance changes. (there can be missing some though)
+It also makes a lot of balance changes to make their capability match the prices better.
 
 * Railgun
-  - All shells have significantly higher sever probability
+  - All shells have significantly higher severance probability
   - All shells (except canister) have 2 slots instead of 1
   - Steel Shell costs no iron and afflicts more damage
-  - Physicorium Shell costs more material and afflicts more damage
-  - Nuclear Shell afflicts more damage
+  - Physicorium Shell costs more material and its impact afflicts much more damage
+  - Nuclear Shell's explosion afflicts much more damage
   - Canister Shell contains 24 pellets instead of 11
 
 * Flak Cannon
-  - Directional Bolt spawns 3 more shrapnels, and each sharpnel deals slightly more damage with increased severance probability
-  - Physicorium Flak Shell Boxes are now sold on higher difficulty
-  - Explosive ammo damage reverted to 0.19
+  - Steel shrapnel spread decreased
+  - Directional shrapnel count increased
+  - Physicorium Ammo Box can be bought on higher difficulty
+  - Explosive shrapnel count and damage increased, spread decreased
 
 * Coilgun
   - Physicorium Ammo Box costs no lead
@@ -42,7 +43,7 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Depleted Fuel Ammo Box is sold by military merchants and armory merchants
 
 * Chaingun
-  - All ammo box cost changed, lead ammo cheaper, others more expensive
+  - Basic ammo cheaper, others more expensive
   - All bolts have higher launch impulse, severance probability and less spread
   - Shredder bolts and Physicorium bolts have higher armor penetration
   - Shredder Ammo Box contains 500 rounds instead of 400
@@ -54,6 +55,6 @@ It also makes a lot of balance changes. (there can be missing some though)
   - Changed color of Tri-Laser Beam to yellow for consistency
 
 * Depth Charges/Decoys
-  - Launch impulse significantly increased
+  - Launch impulse increased by 100%
   - Increased damage against abyss beasts
   - Have 2 slots instead of 1
