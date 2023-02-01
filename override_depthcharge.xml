@@ -24,7 +24,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="0,0,130,89" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
     <Body width="128" height="85" density="20" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="10.0">
       <!--改发射冲量-->
@@ -97,7 +97,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
     <Body width="128" height="85" density="20" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="10.0">
       <!--改发射冲量-->
@@ -174,7 +174,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="138,380,129,88" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
     <Body width="128" height="85" density="15" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <AiTarget maxsoundrange="10000" maxsightrange="6000" />
     <Projectile characterusable="false" launchimpulse="10.0">
@@ -244,7 +244,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="270,379,129,88" depth="0.55" origin="0.5,0.5" />
     <!--改贴图引用-->
     <Body width="128" height="85" density="15" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <AiTarget maxsoundrange="10000" maxsightrange="6000" />
     <Projectile characterusable="false" launchimpulse="10.0">

@@ -33,8 +33,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="2,91,215,33" depth="0.55" origin="0.5,0.5" />
     <!--改引用-->
     <Body width="215" height="30" density="30" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位-->
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="100" severlimbsprobability="50" penetration="0.5" targetforce="1000">
       <!--改断肢率-->
@@ -106,8 +105,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,131,217,33" depth="0.55" origin="0.5,0.5" />
     <!--改引用-->
     <Body width="215" height="30" density="35" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位-->
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="50" severlimbsprobability="50" penetration="0.5" targetforce="1000">
       <!--改断肢率-->
@@ -191,8 +189,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,170,216,34" depth="0.55" origin="0.5,0.5" />
     <!--改引用-->
     <Body width="215" height="30" density="35" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位-->
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="0" damagedoors="true">
       <Attack structuredamage="200" itemdamage="200" severlimbsprobability="200" penetration="0.8" targetforce="1000">
       <!--改断肢率-->
@@ -262,8 +259,7 @@
     <BrokenSprite texture="Content/Items/Containers/containers2.png" sourcerect="799,744,216,34" depth="0.55" origin="0.5,0.5" maxcondition="0" />
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="0,447,64,64" origin="0.5,0.5" />
     <Body width="215" height="30" density="35" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位-->
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="24" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" spawnwithid="railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet">
     <!--改弹丸数量-->
       <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">

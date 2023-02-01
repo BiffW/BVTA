@@ -94,8 +94,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="800,788,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="30" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改栏位，可合并-->
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunbolt">
     <!--加一发初始弹药，给手持舰载武器mod用的-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
@@ -144,8 +143,7 @@
     </Deconstruct>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="918,788,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="30" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改栏位，可合并-->
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="physicoriumbolt">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
@@ -195,8 +193,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="560,788,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="25" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改栏位，可合并-->
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunboltexplosive">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
@@ -244,8 +241,7 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="680,788,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="25" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改栏位，可合并-->
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="coilgunboltpiercing">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
@@ -325,8 +321,7 @@
     </Deconstruct>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="560,878,95,78" origin="0.5,0.5" />
     <Body width="115" height="88" density="25" />
-    <Holdable slots="Any,RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改栏位，可合并-->
+    <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="depletedfuelbolt">
     <!--加一发初始弹药-->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
