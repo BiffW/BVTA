@@ -1,6 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
-  <!--电磁枪穿甲弹-->
+  <!-- 电磁枪爆破弹(无删减版) -->
+  <Item name="" identifier="coilgunboltexplosive" category="Weapon" scale="0.5" sonarsize="2" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="144,436,112,9" depth="0.55" />
+    <Body width="160" height="10" density="20" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" launchimpulse="0" damagedoors="true">
+      <Attack structuredamage="20" itemdamage="10" severlimbsprobability="0.25" penetration="0.5">
+        <Affliction identifier="explosiondamage" strength="10" />
+        <Affliction identifier="bleeding" strength="1.0" />
+        <Affliction identifier="stun" strength="0.025" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" lifetime="2">
+        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="5" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="3">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This">
+        <Explosion range="300.0" structuredamage="50" force="10.0" itemdamage="250" severlimbsprobability="0.25" decal="explosion" decalsize="0.3">
+          <Affliction identifier="explosiondamage" strength="50" />
+        </Explosion>
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="*0.5" />
+  </Item>
+  <!-- 电磁枪穿甲弹 -->
   <Item name="" identifier="coilgunboltpiercing" category="Weapon" scale="0.5" sonarsize="2" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="144,447,112,12" depth="0.55" />
     <Body width="160" height="10" density="20" />

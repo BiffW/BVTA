@@ -4,7 +4,7 @@
   <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="30" minavailable="1">
+    <Price baseprice="120" minavailable="1">
       <Price storeidentifier="merchantoutpost" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
@@ -116,7 +116,7 @@
           <Affliction identifier="explosiondamage" strength="1000" />
           <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
-          <Affliction identifier="bleeding" strength="500" probability="0.05" multiplybymaxvitality="true" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="500" probability="0.05" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="30" />
           <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
           <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
@@ -142,12 +142,16 @@
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
   </Item>
   <!-- 诱饵 -->
   <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" health="200" indestructible="true">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="180" minavailable="2">
+    <Price baseprice="270" minavailable="2">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -207,6 +211,10 @@
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
   </Item>
   <!-- 核诱饵 -->
   <Item name="" identifier="nucleardepthdecoy" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="200">
@@ -262,7 +270,7 @@
           <Affliction identifier="explosiondamage" strength="1000" />
           <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
-          <Affliction identifier="bleeding" strength="500" probability="0.05" multiplybymaxvitality="true" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="500" probability="0.05" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="30" />
           <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
           <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
@@ -291,5 +299,9 @@
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem,explosive" />
     </ItemContainer>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
   </Item>
 </Override>
