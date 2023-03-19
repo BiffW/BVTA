@@ -21,6 +21,7 @@ This mod overrides every ammunition for turrets to make them more convenient to 
 It also makes a lot of balance changes to make their capability match the prices better.
 
 * Railgun
+  - Crossover with Backpacks(A mod I highly recommend). All shells you purchased will spawn in a heavy crate.
   - All shells have significantly higher severance probability
   - All shells (except canister) have 2 slots instead of 1
   - Steel Shell costs no iron and afflicts more damage

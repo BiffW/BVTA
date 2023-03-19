@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 标准炮弹 -->
-  <Item name="" identifier="railgunshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="railgunshell" tags="railgunequipment,railgunammo" cargocontaineridentifier="heavycrate" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
     <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4" />
@@ -72,7 +72,7 @@
     </ItemContainer>
   </Item>
   <!-- 核弹 -->
-  <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="nuclearshell" tags="railgunequipment,railgunammo" cargocontaineridentifier="heavycrate" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
     <Price baseprice="470" sold="false">
@@ -157,7 +157,7 @@
     </ItemContainer>
   </Item>
   <!-- 刚素弹 -->
-  <Item name="" identifier="alienshell" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="alienshell" tags="railgunequipment,railgunammo" cargocontaineridentifier="heavycrate" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
     <Price baseprice="330" minleveldifficulty="35">
@@ -228,7 +228,7 @@
     </ItemContainer>
   </Item>
   <!-- 霰弹 -->
-  <Item name="" identifier="railguncanistershell" tags="railgunequipment,railgunammo,containershell" category="Weapon" linkable="true" scale="0.5" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="railguncanistershell" tags="railgunequipment,railgunammo,containershell" cargocontaineridentifier="heavycrate" category="Weapon" linkable="true" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" minamount="1" maxamount="2" spawnprobability="0.2" />
     <Price baseprice="59" minavailable="3">
