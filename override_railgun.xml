@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 标准炮弹 -->
+  <Item identifier="railgunshell">
+    <inherit identifier="railgunshell">
+      <doinherit />
+      <!-- 联动Backpacks:购买的炮弹会用Heavy Crate打包送到潜艇里,如果没安装Backpacks会跳警告,但不影响游戏 -->
+      <add sel="./@cargocontaineridentifier">heavycrate</add>
+      <!-- 四倍配方 -->
+      <add sel=".">
+        <Fabricate suitablefabricators="fabricator" requiredtime="80" amount="4">
+          <RequiredSkill identifier="weapons" level="25" />
+          <RequiredItem identifier="steel" amount="4" />
+          <RequiredItem identifier="iron" amount="4" />
+        </Fabricate>
+      </add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+  <!-- 核弹 -->
+  <Item identifier="nuclearshell">
+    <inherit identifier="nuclearshell">
+      <doinherit />
+      <!-- 联动Backpacks -->
+      <add sel="./@cargocontaineridentifier">heavycrate</add>
+      <!-- 改物品栏图标 -->
+      <replace sel="./InventoryIcon">
+        <InventoryIcon texture="%ModDir:2960880997%/images/nuclearshell.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+      </replace>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+  <!-- 刚素弹 -->
+  <Item identifier="alienshell">
+    <inherit identifier="alienshell">
+      <doinherit />
+      <!-- 联动Backpacks -->
+      <add sel="./@cargocontaineridentifier">heavycrate</add>
+      <!-- 四倍配方 -->
+      <add sel=".">
+        <Fabricate suitablefabricators="fabricator" requiredtime="80" amount="4">
+          <RequiredSkill identifier="weapons" level="30" />
+          <RequiredItem identifier="physicorium" amount="4" />
+          <RequiredItem identifier="titanium" amount="4" />
+        </Fabricate>
+      </add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+  <!-- 霰弹 -->
+  <Item identifier="railguncanistershell">
+    <inherit identifier="railguncanistershell">
+      <doinherit />
+      <!-- 联动Backpacks -->
+      <add sel="./@cargocontaineridentifier">heavycrate</add>
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='railguncanistershell']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">containershell</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+</Override>

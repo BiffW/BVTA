@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!--霰弹弹药箱-->
+  <Item identifier="flakcannonammobox">
+    <inherit identifier="flakcannonammobox">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='flakcannonammobox']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">flakcannonammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!--集束弹药箱-->
+  <Item identifier="flakcannondirectionalammobox">
+    <inherit identifier="flakcannondirectionalammobox">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='flakcannondirectionalammobox']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">flakcannonammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!--刚素弹药箱-->
+  <Item identifier="flakcannonammoboxphysicorium">
+    <inherit identifier="flakcannonammoboxphysicorium">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='flakcannonammoboxphysicorium']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">flakcannonammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!--爆破弹药箱-->
+  <Item identifier="flakcannonammoboxexplosive">
+    <inherit identifier="flakcannonammoboxexplosive">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='flakcannonammoboxexplosive']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">flakcannonammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+</Override>

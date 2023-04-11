@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!--单束激光-->
+  <Item identifier="pulselaserbolt">
+    <inherit identifier="pulselaserbolt">
+      <doinherit />
+      <!-- 删除气泡 -->
+      <del sel="./Projectile/ParticleEmitter[@particle='FlareBubbles']" />
+      <del sel="./Projectile/StatusEffect[1]/ParticleEmitter[@particle='FlareBubbles']" />
+    </inherit>
+  </Item>
+  <!-- 三联激光 -->
+  <Item identifier="pulselaserbolttrilaser">
+    <inherit identifier="pulselaserbolttrilaser">
+      <doinherit />
+      <!-- 改光束颜色 -->
+      <replace sel="./Projectile/ParticleEmitter[@particle='tracerpulselaser']/@particle">tracerpulselaserfulgurium</replace>
+      <replace sel="./Projectile/StatusEffect[1]/ParticleEmitter[@particle='muzzleflashpulselaser']/@particle">muzzleflashpulselaserfulgurium</replace>
+      <!-- 删除气泡 -->
+      <del sel="./Projectile/StatusEffect[1]/ParticleEmitter[@particle='FlareBubbles']" />
+    </inherit>
+  </Item>
+  <!-- 脉冲激光弹药箱 -->
+  <Item identifier="pulselaserammobox">
+    <inherit identifier="pulselaserammobox">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='pulselaserammobox']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">pulselaserammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 三联激光弹药箱 -->
+  <Item identifier="pulselaserammoboxtrilaser">
+    <inherit identifier="pulselaserammoboxtrilaser">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='pulselaserammoboxtrilaser']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">pulselaserammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+</Override>

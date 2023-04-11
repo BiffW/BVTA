@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 标准弹药箱 -->
+  <Item identifier="coilgunammobox">
+    <inherit identifier="coilgunammobox">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='coilgunammobox']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">coilgunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 电磁枪刚素弹药箱 -->
+  <Item identifier="physicoriumammobox">
+    <inherit identifier="physicoriumammobox">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='physicoriumammobox']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">coilgunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 爆破弹药箱 -->
+  <Item identifier="coilgunammoboxexplosive">
+    <inherit identifier="coilgunammoboxexplosive">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='coilgunammoboxexplosive']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">coilgunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 穿甲弹药箱 -->
+  <Item identifier="coilgunammoboxpiercing">
+    <inherit identifier="coilgunammoboxpiercing">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='coilgunammoboxpiercing']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">coilgunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 电磁枪贫化燃料弹药箱 -->
+  <Item identifier="coilgunammoboxdepletedfuel">
+    <inherit identifier="coilgunammoboxdepletedfuel">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='coilgunammoboxdepletedfuel']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">coilgunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+</Override>

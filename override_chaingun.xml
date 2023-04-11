@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 铅弹药箱 -->
+  <Item identifier="chaingunammobox">
+    <inherit identifier="chaingunammobox">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='chaingunammobox']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">chaingunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 刚素弹药箱 -->
+  <Item identifier="chaingunammoboxphysicorium">
+    <inherit identifier="chaingunammoboxphysicorium">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='chaingunammoboxphysicorium']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">chaingunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+    </inherit>
+  </Item>
+  <!-- 碎甲弹药箱 -->
+  <Item identifier="chaingunammoboxshredder">
+    <inherit identifier="chaingunammoboxshredder">
+      <doinherit />
+      <!-- 按tag取材料 -->
+      <del sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@identifier='chaingunammoboxshredder']/@identifier" />
+      <add sel="./Fabricate[@displayname='recycleitem']/RequiredItem[@usecondition='false']/@tag">chaingunammo</add>
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+      <!-- 可合并耐久 -->
+      <add sel="./Holdable/@canBeCombined">true</add>
+      <!-- 改贴图 -->
+      <replace sel="./Sprite">
+        <Sprite texture="%ModDir:2960880997%/images/shredder.png" depth="0.54" sourcerect="0,0,95,78" origin="0.5,0.5" />
+      </replace>
+    </inherit>
+  </Item>
+</Override>

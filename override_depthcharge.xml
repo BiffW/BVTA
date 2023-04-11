@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 深水炸弹 -->
+  <Item identifier="depthchargeshell">
+    <inherit identifier="depthchargeshell">
+      <doinherit />
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+  <!-- 核深水炸弹 -->
+  <Item identifier="nucleardepthcharge">
+    <inherit identifier="nucleardepthcharge">
+      <doinherit />
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+  <!-- 诱饵 -->
+  <Item identifier="depthdecoyshell">
+    <inherit identifier="depthdecoyshell">
+      <doinherit />
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+  <!-- 核诱饵 -->
+  <Item identifier="nucleardepthdecoy">
+    <inherit identifier="nucleardepthdecoy">
+      <doinherit />
+      <!-- 可放快捷栏 -->
+      <replace sel="./Holdable/@slots">Any,RightHand+LeftHand</replace>
+    </inherit>
+  </Item>
+</Override>
