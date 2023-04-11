@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 脉冲激光弹药箱 -->
+  <Item identifier="pulselaserammobox">
+    <inherit identifier="pulselaserammobox">
+      <doinherit />
+      <add sel=".">
+        <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.2" />
+      </add>
+      <replace sel="./Price/@minavailable">2</replace>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="0.8" minavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </add>
+      <replace sel="./ItemContainer/StatusEffect[@condition&lt;-2]/@condition">-2</replace>
+    </inherit>
+  </Item>
+  <!-- 三联激光弹药箱 -->
+  <Item identifier="pulselaserammoboxtrilaser">
+    <inherit identifier="pulselaserammoboxtrilaser">
+      <doinherit />
+      <add sel=".">
+        <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.05" />
+      </add>
+      <replace sel="./Price/@baseprice">370</replace>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="0.8" sold="true" minavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="2" />
+      </add>
+      <replace sel="./ItemContainer/StatusEffect[@condition&lt;-2]/@condition">-2</replace>
+    </inherit>
+  </Item>
+</Override>

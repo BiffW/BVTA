@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Override>
+    <!-- UEX -->
+    <Item identifier="uex">
+        <inherit identifier="uex">
+            <doinherit />
+            <add sel="./Throwable/StatusEffect[@type='OnBroken']/Explosion">
+                <Affliction identifier="explosiondamage" strength="6.25" multiplybymaxvitality="true" />
+            </add>
+        </inherit>
+    </Item>
+    <!-- C4 -->
+    <Item identifier="c4block">
+        <inherit identifier="c4block">
+            <doinherit />
+            <add sel="./Throwable/StatusEffect[@type='OnBroken']/Explosion">
+                <Affliction identifier="explosiondamage" strength="12.5" multiplybymaxvitality="true" />
+            </add>
+        </inherit>
+    </Item>
+    <!-- 叠氮化合物 -->
+    <Item identifier="compoundn">
+        <inherit identifier="compoundn">
+            <doinherit />
+            <add sel="./Throwable/StatusEffect[@type='OnBroken']/Explosion">
+                <Affliction identifier="explosiondamage" strength="6.25" multiplybymaxvitality="true" />
+            </add>
+        </inherit>
+    </Item>
+    <!-- 挥发性叠氮化合物 -->
+    <Item identifier="volatilecompoundn">
+        <inherit identifier="volatilecompoundn">
+            <doinherit />
+            <add sel="./Throwable/StatusEffect[@type='OnBroken']/Explosion">
+                <Affliction identifier="explosiondamage" strength="6.25" multiplybymaxvitality="true" />
+            </add>
+        </inherit>
+    </Item>
+    <!-- IC4 -->
+    <Item identifier="ic4block">
+        <inherit identifier="ic4block">
+            <doinherit />
+            <add sel="./Throwable/StatusEffect[@type='OnBroken']/Explosion">
+                <Affliction identifier="explosiondamage" strength="5" multiplybymaxvitality="true" />
+                <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
+            </add>
+        </inherit>
+    </Item>
+</Override>

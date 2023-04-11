@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 铅弹 -->
+  <Item identifier="chaingunbolt">
+    <inherit identifier="chaingunbolt">
+      <doinherit />
+      <replace sel="./Projectile/@spread">4</replace>
+      <replace sel="./Projectile/Attack/@severlimbsprobability">1.25</replace>
+      <add sel="./Projectile/Attack/@targetforce">12.5</add>
+    </inherit>
+  </Item>
+  <!-- 刚素弹 -->
+  <Item identifier="chaingunboltphysicorium">
+    <inherit identifier="chaingunboltphysicorium">
+      <doinherit />
+      <replace sel="./Projectile/@spread">4</replace>
+      <replace sel="./Projectile/Attack/@severlimbsprobability">5</replace>
+      <replace sel="./Projectile/Attack/@penetration">0.3</replace>
+      <replace sel="./Projectile/Attack/Affliction[@identifier='lacerations']/@strength">24</replace>
+    </inherit>
+  </Item>
+  <!-- 碎甲弹 -->
+  <Item identifier="chaingunboltshredder">
+    <inherit identifier="chaingunboltshredder">
+      <doinherit />
+      <replace sel="./Projectile/@spread">4</replace>
+      <replace sel="./Projectile/Attack/@severlimbsprobability">2.5</replace>
+      <replace sel="./Projectile/Attack/@penetration">0.5</replace>
+      <add sel="./Projectile/Attack/@targetforce">25</add>
+      <replace sel="./Projectile/Attack/Affliction[@identifier='lacerations']/@strength">18</replace>
+      <replace sel="./Projectile/Attack/Affliction[@identifier='bleeding']/@strength">9</replace>
+    </inherit>
+  </Item>
+  <!-- 铅弹药箱 -->
+  <Item identifier="chaingunammobox">
+    <inherit identifier="chaingunammobox">
+      <doinherit />
+      <add sel=".">
+        <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.2" />
+      </add>
+      <replace sel="./Price/@baseprice">120</replace>
+      <replace sel="./Price/@minavailable">2</replace>
+      <del sel="./Price/Price[@storeidentifier='merchantcity' or @storeidentifier='merchantresearch' or @storeidentifier='merchantmine']/@sold" />
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="lead" mincondition="0.95" />
+        <Item identifier="lead" mincondition="0.45" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+      <replace sel="./Fabricate/RequiredItem[@identifier='titanium']/@identifier">steel</replace>
+    </inherit>
+  </Item>
+  <!-- 刚素弹药箱 -->
+  <Item identifier="chaingunammoboxphysicorium">
+    <inherit identifier="chaingunammoboxphysicorium">
+      <doinherit />
+      <add sel=".">
+        <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.04" />
+      </add>
+      <replace sel="./Price/@baseprice">500</replace>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" minavailable="1" sold="true" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="2" sold="true" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" sold="true" />
+      </add>
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="physicorium" mincondition="0.95" />
+        <Item identifier="physicorium" mincondition="0.45" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+      <add sel="./Fabricate/RequiredItem[@identifier='physicorium']/@amount">2</add>
+      <replace sel="./Fabricate/RequiredItem[@identifier='titanium']/@identifier">steel</replace>
+    </inherit>
+  </Item>
+  <!-- 碎甲弹药箱 -->
+  <Item identifier="chaingunammoboxshredder">
+    <inherit identifier="chaingunammoboxshredder">
+      <doinherit />
+      <add sel=".">
+        <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.05" />
+      </add>
+      <replace sel="./Price/@minavailable">1</replace>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </add>
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="lead" mincondition="0.95" />
+        <Item identifier="lead" mincondition="0.45" />
+        <Item identifier="titanium" mincondition="0.95" />
+        <Item identifier="aluminium" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+      <add sel="./Fabricate/RequiredItem[@identifier='lead']/@amount">2</add>
+      <replace sel="./ItemContainer/StatusEffect[@condition&lt;-0.2]/@condition">-0.2</replace>
+    </inherit>
+  </Item>
+</Override>

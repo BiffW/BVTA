@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- 电磁枪爆破弹 -->
+  <Item identifier="coilgunboltexplosive">
+    <inherit identifier="coilgunboltexplosive">
+      <doinherit />
+      <replace sel=".//@penetration">0.5</replace>
+      <add sel=".//Explosion/@penetration">0.5</add>
+      <replace sel=".//Explosion/@structuredamage">50</replace>
+      <replace sel=".//Explosion/Affliction[@identifier='explosiondamage']/@strength">50</replace>
+    </inherit>
+  </Item>
+  <!-- 电磁枪穿甲弹 -->
+  <Item identifier="coilgunboltpiercing">
+    <inherit identifier="coilgunboltpiercing">
+      <doinherit />
+      <replace sel=".//Affliction[@identifier='lacerations']/@strength">12</replace>
+      <add sel=".//ParticleEmitter[@particle='ammotrailwater']/@colormultiplier">255,166,166,175</add>
+    </inherit>
+  </Item>
+  <!-- 标准弹药箱 -->
+  <Item identifier="coilgunammobox">
+    <inherit identifier="coilgunammobox">
+      <doinherit />
+      <replace sel="./Price/@baseprice">100</replace>
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="lead" mincondition="0.95" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+    </inherit>
+  </Item>
+  <!-- 电磁枪刚素弹药箱 -->
+  <Item identifier="physicoriumammobox">
+    <inherit identifier="physicoriumammobox">
+      <doinherit />
+      <add sel="./Price/@minleveldifficulty">35</add>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" minavailable="2" sold="true" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="4" sold="true" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" sold="true" />
+      </add>
+      <del sel="./Fabricate/RequiredItem[@identifier='lead']" />
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="physicorium" mincondition="0.95" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+    </inherit>
+  </Item>
+  <!-- 爆破弹药箱 -->
+  <Item identifier="coilgunammoboxexplosive">
+    <inherit identifier="coilgunammoboxexplosive">
+      <doinherit />
+      <replace sel="./Price/@baseprice">420</replace>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" maxavailable="3" minleveldifficulty="5" />
+        <Price storeidentifier="merchantmine" sold="true" multiplier="1.0" maxavailable="2" minleveldifficulty="5" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" maxavailable="3" minleveldifficulty="5" />
+      </add>
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="c4block" mincondition="0.95" />
+        <Item identifier="c4block" mincondition="0.45" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+      <add sel="./Fabricate/RequiredItem[@identifier='c4block']/@amount">2</add>
+      <replace sel="./ItemContainer/StatusEffect[@condition&lt;-0.5]/@condition">-0.5</replace>
+    </inherit>
+  </Item>
+  <!-- 穿甲弹药箱 -->
+  <Item identifier="coilgunammoboxpiercing">
+    <inherit identifier="coilgunammoboxpiercing">
+      <doinherit />
+      <replace sel="./Price/Price[@storeidentifier='merchantmine']">
+        <Price storeidentifier="merchantmine" multiplier="1" minavailable="6" minleveldifficulty="5" />
+      </replace>
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="titaniumaluminiumalloy" mincondition="0.95" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+      <replace sel="./ItemContainer/StatusEffect[@condition&lt;-0.5]/@condition">-0.5</replace>
+    </inherit>
+  </Item>
+  <!--电磁枪贫化燃料弹-->
+  <Item identifier="depletedfuelbolt">
+    <inherit identifier="depletedfuelbolt">
+      <doinherit />
+      <replace sel="./Projectile/Attack/Affliction[@identifier='lacerations']/@strength">22</replace>
+      <replace sel="./Projectile/Attack/Affliction[@identifier='stun']/@strength">0.05</replace>
+      <del sel="./Projectile/Attack/StatusEffect" />
+      <add sel="./Projectile/Attack">
+        <Affliction identifier="radiationsickness" strength="5" />
+        <Affliction identifier="radiationsickness" strength="1" multiplybymaxvitality="true" />
+      </add>
+    </inherit>
+  </Item>
+  <!-- 电磁枪贫化燃料弹药箱 -->
+  <Item identifier="coilgunammoboxdepletedfuel">
+    <inherit identifier="coilgunammoboxdepletedfuel">
+      <doinherit />
+      <replace sel="./Price/@baseprice">250</replace>
+      <add sel="./Price/@minleveldifficulty">25</add>
+      <del sel="./Price/Price" />
+      <add sel="./Price">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" maxavailable="6" sold="true" />
+        <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="4" sold="true" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" maxavailable="6" sold="true" />
+      </add>
+      <del sel="./Deconstruct/Item" />
+      <add sel="./Deconstruct">
+        <Item identifier="depletedfuel" mincondition="0.95" />
+        <Item identifier="depletedfuel" mincondition="0.45" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="carbon" mincondition="0.95" />
+        <Item identifier="aluminium" />
+      </add>
+    </inherit>
+  </Item>
+</Override>
