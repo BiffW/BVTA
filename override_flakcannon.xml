@@ -7,11 +7,23 @@
       <replace sel="./Projectile/StatusEffect[@type='OnBroken']/SpawnItem/@aimspread">60</replace>
     </inherit>
   </Item>
+  <!--霰弹破片-->
+  <Item identifier="flakshrapnel">
+    <inherit identifier="flakshrapnel">
+      <doinherit />
+      <replace sel="./Projectile/Attack/Affliction[@identifier='lacerations']/@strength">17</replace>
+      <add sel="./Projectile/Attack">
+        <Affliction identifier="stun" strength="0.6" probability="0.2" />
+      </add>
+    </inherit>
+  </Item>
   <!--霰弹弹药箱-->
   <Item identifier="flakcannonammobox">
     <inherit identifier="flakcannonammobox">
       <doinherit />
       <replace sel="./Price/@baseprice">100</replace>
+      <replace sel="./Price/Price[@storeidentifier='merchantmilitary']/@minavailable">6</replace>
+      <replace sel="./Price/Price[@storeidentifier='merchantarmory']/@minavailable">6</replace>
     </inherit>
   </Item>
   <!--集束弹-->
@@ -19,6 +31,18 @@
     <inherit identifier="flakboltdirectional">
       <doinherit />
       <replace sel="./Projectile/StatusEffect[@type='OnBroken']/SpawnItem/@count">16</replace>
+      <replace sel="./Projectile/StatusEffect[@type='OnBroken']/SpawnItem/@aimspread">35</replace>
+    </inherit>
+  </Item>
+  <!--集束弹破片-->
+  <Item identifier="flakshrapneldirectional">
+    <inherit identifier="flakshrapneldirectional">
+      <doinherit />
+      <replace sel="./Projectile/Attack/@penetration">0.5</replace>
+      <replace sel="./Projectile/Attack/Affliction[@identifier='lacerations']/@strength">35</replace>
+      <replace sel="./Projectile/Attack/Affliction[@identifier='stun' and @amount='5']">
+        <Affliction identifier="stun" strength="2.5" probability="0.2" />
+      </replace>
     </inherit>
   </Item>
   <!--集束弹药箱-->
@@ -31,16 +55,14 @@
         <Price storeidentifier="merchantoutpost" multiplier="1.3" />
         <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
         <Price storeidentifier="merchantresearch" multiplier="1.3" />
-        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="8" minleveldifficulty="10" />
-        <Price storeidentifier="merchantmine" multiplier="1" minavailable="5" />
-        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="8" minleveldifficulty="10" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" minleveldifficulty="10" />
+        <Price storeidentifier="merchantmine" multiplier="1" minavailable="3" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" minleveldifficulty="10" />
       </add>
-      <del sel="./Deconstruct/Item" />
-      <add sel="./Deconstruct">
-        <Item identifier="lead" mincondition="0.95" />
+      <replace sel="./Deconstruct/Item[@identifier='aluminium']">
         <Item identifier="lead" mincondition="0.45" />
         <Item identifier="aluminium" />
-      </add>
+      </replace>
     </inherit>
   </Item>
   <!--刚素弹药箱-->
@@ -49,14 +71,14 @@
       <doinherit />
       <replace sel="./Price/@baseprice">300</replace>
       <del sel="./Price/@sold" />
-      <add sel="./Price/@minleveldifficulty">35</add>
+      <add sel="./Price/@minleveldifficulty">50</add>
       <del sel="./Price/Price" />
       <add sel="./Price">
-        <Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
-        <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
-        <Price storeidentifier="merchantresearch" multiplier="1.3" sold="false" />
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
         <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" minleveldifficulty="35" />
-        <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
         <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" minleveldifficulty="35" />
       </add>
     </inherit>
@@ -73,8 +95,9 @@
   <Item identifier="flakshrapnelexplosive">
     <inherit identifier="flakshrapnelexplosive">
       <doinherit />
+      <del sel="./Projectile/@impulsespread" />
       <replace sel="./Projectile/StatusEffect/Explosion/@structuredamage">25</replace>
-      <replace sel="./Projectile/StatusEffect/Explosion/@severlimbsprobability">1</replace>
+      <replace sel="./Projectile/StatusEffect/Explosion/@severlimbsprobability">0.5</replace>
       <replace sel="./Projectile/StatusEffect/Explosion/Affliction[@identifier='explosiondamage']/@strength">60</replace>
       <del sel="./Projectile/StatusEffect/ParticleEmitter[@particle='shrapnel']" />
     </inherit>
@@ -85,14 +108,14 @@
       <doinherit />
       <replace sel="./Price/@baseprice">375</replace>
       <replace sel="./Price/Price[@minavailable='8']/@minavailable">4</replace>
-      <del sel="./Deconstruct/Item" />
-      <add sel="./Deconstruct">
+      <replace sel="./Deconstruct/Item[@identifier='steel']">
         <Item identifier="iron" mincondition="0.95" />
         <Item identifier="carbon" mincondition="0.95" />
-        <Item identifier="c4block" mincondition="0.95" />
+      </replace>
+      <replace sel="./Deconstruct/Item[@identifier='aluminium']">
         <Item identifier="c4block" mincondition="0.45" />
         <Item identifier="aluminium" />
-      </add>
+      </replace>
     </inherit>
   </Item>
 </Override>

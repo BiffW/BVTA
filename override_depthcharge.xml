@@ -25,28 +25,13 @@
   <Item identifier="depthdecoyshell">
     <inherit identifier="depthdecoyshell">
       <doinherit />
-      <replace sel="./Price/@baseprice">270</replace>
+      <replace sel="./Price/@baseprice">100</replace>
       <del sel="./Deconstruct/Item" />
       <add sel="./Deconstruct">
         <Item identifier="iron" />
-        <Item identifier="sonarbeacon" />
-        <Item identifier="uex" />
+        <Item identifier="fpgacircuit" />
       </add>
-      <add sel="./Fabricate">
-        <RequiredItem identifier="uex" />
-      </add>
-      <del sel="./Projectile/StatusEffect[@target='Contained']/*" />
-      <add sel="./Projectile/StatusEffect[@target='Contained']">
-        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
-          <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
-          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
-          <Affliction identifier="stun" strength="7" />
-          <Affliction identifier="explosiondamage" strength="10" multiplybymaxvitality="true" />
-        </Explosion>
-        <Use />
-        <particleemitter particle="shrapnel" drawontop="true" particleamount="100" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.2" scalemax="0.35" />
-      </add>
+      <replace sel="./Fabricate/RequiredItem[@identifier='sonarbeacon']/@identifier">fpgacircuit</replace>
       <replace sel="./ItemContainer/@capacity">2</replace>
     </inherit>
   </Item>
@@ -54,9 +39,11 @@
   <Item identifier="nucleardepthdecoy">
     <inherit identifier="nucleardepthdecoy">
       <doinherit />
+      <replace sel="./Price/@baseprice">510</replace>
       <add sel="./Deconstruct">
-        <Item identifier="sonarbeacon" />
+        <Item identifier="fpgacircuit" />
       </add>
+      <replace sel="./Fabricate/RequiredItem[@identifier='sonarbeacon']/@identifier">fpgacircuit</replace>
       <replace sel="./Fabricate/@requiredtime">10</replace>
       <add sel="./Projectile/StatusEffect[@type='OnBroken']/Explosion">
         <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
