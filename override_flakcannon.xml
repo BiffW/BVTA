@@ -63,7 +63,7 @@
     </Projectile>
   </Item>
   <!--霰弹弹药箱-->
-  <Item name="" identifier="flakcannonammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="flakcannonammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="flakcannonammoloader" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" amount="1" />
@@ -171,7 +171,7 @@
     </Projectile>
   </Item>
   <!--集束弹药箱-->
-  <Item name="" identifier="flakcannondirectionalammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="flakcannondirectionalammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" amount="1" />
@@ -219,7 +219,7 @@
     </ItemContainer>
   </Item>
   <!--刚素弹药箱-->
-  <Item name="" identifier="flakcannonammoboxphysicorium" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="flakcannonammoboxphysicorium" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" mincondition="1" />
@@ -346,7 +346,7 @@
     </Projectile>
   </Item>
   <!--爆破弹药箱-->
-  <Item name="" identifier="flakcannonammoboxexplosive" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="flakcannonammoboxexplosive" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" />

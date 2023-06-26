@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 深水炸弹 -->
-  <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
+  <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="120" minavailable="1">
@@ -66,7 +66,7 @@
     </Quality>
   </Item>
   <!-- 核深水炸弹 -->
-  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
+  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="450" sold="false">
@@ -109,6 +109,10 @@
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="this">
+        <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="5000" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="this">
         <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0"
            camerashake="1000" camerashakerange="50000"
            flashrange="10000" flashduration="5.0"
@@ -148,7 +152,7 @@
     </Quality>
   </Item>
   <!-- 诱饵 -->
-  <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" health="200" indestructible="true">
+  <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" health="200" indestructible="true" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="100" minavailable="2">
@@ -208,7 +212,7 @@
     </Quality>
   </Item>
   <!-- 核诱饵 -->
-  <Item name="" identifier="nucleardepthdecoy" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="200">
+  <Item name="" identifier="nucleardepthdecoy" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="200" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="590" sold="false">

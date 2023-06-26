@@ -33,7 +33,7 @@
                     <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="7" />
-                    <Affliction identifier="explosiondamage" strength="6.25" multiplybymaxvitality="true" />
+                    <Affliction identifier="explosiondamage" strength="8" multiplybymaxvitality="true" />
                     <!--add some damage-->
                 </Explosion>
                 <Remove />
@@ -80,7 +80,7 @@
                     <Affliction identifier="burn" strength="30" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="10" />
-                    <Affliction identifier="explosiondamage" strength="12.5" multiplybymaxvitality="true" />
+                    <Affliction identifier="explosiondamage" strength="12" multiplybymaxvitality="true" />
                     <!--add some damage-->
                 </Explosion>
                 <Remove />
@@ -128,7 +128,7 @@
                     <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="7" />
-                    <Affliction identifier="explosiondamage" strength="6.25" multiplybymaxvitality="true" />
+                    <Affliction identifier="explosiondamage" strength="8" multiplybymaxvitality="true" />
                     <!--add some damage-->
                 </Explosion>
                 <Remove />
@@ -175,7 +175,7 @@
                     <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="7" />
-                    <Affliction identifier="explosiondamage" strength="6.25" multiplybymaxvitality="true" />
+                    <Affliction identifier="explosiondamage" strength="8" multiplybymaxvitality="true" />
                     <!--add some damage-->
                 </Explosion>
                 <Remove />

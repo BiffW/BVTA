@@ -66,7 +66,7 @@
     </Projectile>
   </Item>
   <!-- 脉冲激光弹药箱 -->
-  <Item name="" identifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="pulselaserammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.2" />
@@ -114,7 +114,7 @@
     </ItemContainer>
   </Item>
   <!-- 三联激光弹药箱 -->
-  <Item name="" identifier="pulselaserammoboxtrilaser" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy">
+  <Item name="" identifier="pulselaserammoboxtrilaser" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="pulselaserammosource,ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.05" />
     <!--加沉船刷新点-->

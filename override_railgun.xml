@@ -127,8 +127,8 @@
           <Affliction identifier="radiationsickness" strength="100" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" multiplybymaxvitality="true" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="30" />
-          <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
-          <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
+          <Affliction identifier="explosiondamage" strength="12.5" multiplybymaxvitality="true" />
+          <Affliction identifier="burn" strength="12.5" multiplybymaxvitality="true" />
         </Explosion>
         <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
           <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
