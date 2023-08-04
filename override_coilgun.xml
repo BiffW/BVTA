@@ -63,7 +63,7 @@
     <PreferredContainer primary="ammoboxcontainer" amount="2" mincondition="1" />
     <PreferredContainer secondary="wreckcoilgunloader" amount="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.5" />
-    <Price baseprice="100" displaynonempty="true">
+    <Price baseprice="85" displaynonempty="true">
       <!--改价格-->
       <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="6" sold="false" />
@@ -118,14 +118,14 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="physicorium" />
-      <RequiredItem tag="advmunition_core" amount="2" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_core" amount="1" description="fabricationdescription.advmunition_core" />
       <RequiredItem identifier="aluminium" />
       <!--改配方-->
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem identifier="physicorium" />
-      <RequiredItem tag="advmunition_core" amount="2" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_core" amount="1" description="fabricationdescription.advmunition_core" />
       <RequiredItem tag="coilgunammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <!--按tag取材料-->
     </Fabricate>
@@ -203,7 +203,7 @@
     <PreferredContainer primary="coilgunammoloader,ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckcoilgunloader" amount="1" spawnprobability="0.05" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.1" />
-    <Price baseprice="250" displaynonempty="true" minleveldifficulty="15">
+    <Price baseprice="115" displaynonempty="true" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.3" />
@@ -212,9 +212,7 @@
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="8" minleveldifficulty="5" />
     </Price>
     <Deconstruct time="10">
-      <Item identifier="titaniumaluminiumalloy" mincondition="0.95" />
       <Item identifier="aluminium" />
-      <!--改产出-->
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="30" />
@@ -281,7 +279,7 @@
   <!-- 电磁枪贫化燃料弹药箱 -->
   <Item name="" identifier="coilgunammoboxdepletedfuel" scale="0.5" tags="coilgunequipment,coilgunammo,ammobox" allowasextracargo="true" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="coilgunammocontainer" />
-    <Price baseprice="250" sold="false" displaynonempty="true" minleveldifficulty="25">
+    <Price baseprice="150" sold="false" displaynonempty="true" minleveldifficulty="25">
       <!--改价格，前中期有售-->
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" />
@@ -292,14 +290,14 @@
     </Price>
     <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
       <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="depletedfuel" amount="2" />
-      <RequiredItem tag="munition_jacket" amount="1" description="fabricationdescription.munition_jacket" />
+      <RequiredItem identifier="depletedfuel" amount="1" />
+      <RequiredItem tag="munition_core" amount="1" description="fabricationdescription.munition_core" />
       <RequiredItem identifier="aluminium" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15" requiresrecipe="true">
       <RequiredSkill identifier="weapons" level="30" />
-      <RequiredItem identifier="depletedfuel" amount="2" />
-      <RequiredItem tag="munition_jacket" amount="1" description="fabricationdescription.munition_jacket" />
+      <RequiredItem identifier="depletedfuel" amount="1" />
+      <RequiredItem tag="munition_core" amount="1" description="fabricationdescription.munition_core" />
       <RequiredItem tag="coilgunammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <!--按tag取材料-->
     </Fabricate>

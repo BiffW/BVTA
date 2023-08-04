@@ -68,7 +68,7 @@
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" amount="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.1" />
-    <Price baseprice="120" displaynonempty="true" minleveldifficulty="15">
+    <Price baseprice="140" displaynonempty="true" minleveldifficulty="15">
       <!--改价格，减少出售数量-->
       <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="6" sold="false" />
@@ -177,7 +177,7 @@
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" amount="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.05" />
-    <Price baseprice="140" displaynonempty="true" minleveldifficulty="15" minavailable="1">
+    <Price baseprice="175" displaynonempty="true" minleveldifficulty="15" minavailable="1">
       <!--修改出售数量-->
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
@@ -226,7 +226,7 @@
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" mincondition="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" mincondition="1" spawnprobability="0.01" />
-    <Price baseprice="300" displaynonempty="true" minleveldifficulty="50">
+    <Price baseprice="360" displaynonempty="true" minleveldifficulty="50">
       <!--改价格，游戏中期有售-->
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" />
@@ -356,7 +356,7 @@
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.01" />
-    <Price baseprice="375" displaynonempty="true" minleveldifficulty="30">
+    <Price baseprice="435" displaynonempty="true" minleveldifficulty="30">
       <!--改价格，减少出售数量-->
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
