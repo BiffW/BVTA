@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Override>
     <!-- UEX -->
-    <Item name="" identifier="uex" category="Weapon" description="" Scale="0.5" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="8" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+    <Item name="" identifier="uex" category="Weapon" description="" Scale="0.5" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
         <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
@@ -48,7 +48,7 @@
         </Quality>
     </Item>
     <!-- C4 -->
-    <Item name="" identifier="c4block" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+    <Item name="" identifier="c4block" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
         <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.05" />
@@ -95,7 +95,7 @@
         </Quality>
     </Item>
     <!-- 叠氮化合物 -->
-    <Item name="" identifier="compoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+    <Item name="" identifier="compoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" secondary="armcab" />
         <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.01" />
@@ -117,7 +117,7 @@
         <Sprite texture="Content/Items/Weapons/weapons_new.png" depth="0.55" sourcerect="101,476,49,34" origin="0.5,0.5" />
         <Body width="45" height="30" density="20" />
         <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="3.5" canbecombined="true" removeoncombined="true" aimpos="35,-10" msg="ItemMsgPickUpSelect">
-            <StatusEffect type="OnFire" target="This" Condition="-20.0" interval="1" disabledeltatime="true" />
+            <StatusEffect type="OnFire" target="This" Condition="-50.0" interval="1" disabledeltatime="true" />
             <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
             <StatusEffect type="OnBroken" target="This">
                 <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
@@ -143,7 +143,7 @@
         </Quality>
     </Item>
     <!-- 挥发性叠氮化合物 -->
-    <Item name="" identifier="volatilecompoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+    <Item name="" identifier="volatilecompoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" secondary="armcab" />
         <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.01" />
@@ -166,8 +166,8 @@
             <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" type="OnBroken" range="5000" />
             <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" type="OnBroken" range="5000" />
             <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" type="OnBroken" range="5000" />
-            <StatusEffect type="Always" target="This" Condition="-0.17" interval="1" disabledeltatime="true" />
-            <StatusEffect type="OnFire" target="This" Condition="-20.0" interval="1" disabledeltatime="true" />
+            <StatusEffect type="Always" target="This" Condition="-0.35" interval="1" disabledeltatime="true" />
+            <StatusEffect type="OnFire" target="This" Condition="-50.0" interval="1" disabledeltatime="true" />
             <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
             <StatusEffect type="OnBroken" target="This">
                 <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="15" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
@@ -190,7 +190,7 @@
         </Quality>
     </Item>
     <!-- IC4 -->
-    <Item name="" identifier="ic4block" description="" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+    <Item name="" identifier="ic4block" description="" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
         <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.02" />
@@ -212,7 +212,7 @@
             <RequiredItem identifier="incendium" />
         </Fabricate>
         <Throwable characterusable="false" slots="Any,RightHand,LeftHand" canbecombined="true" removeoncombined="true" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
-            <StatusEffect type="OnFire" target="This" Condition="-20.0" interval="1" disabledeltatime="true" />
+            <StatusEffect type="OnFire" target="This" Condition="-50.0" interval="1" disabledeltatime="true" />
             <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
             <StatusEffect type="OnBroken" target="This">
                 <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
