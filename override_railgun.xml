@@ -33,7 +33,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="2,91,215,33" depth="0.55" origin="0.5,0.5" />
     <!--改引用-->
     <Body width="215" height="30" density="30" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="100" severlimbsprobability="50" penetration="0.5" targetforce="1000">
@@ -95,18 +95,12 @@
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="ic4block" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
-      <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="steel" />
-      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
-      <RequiredItem identifier="uex" />
-    </Fabricate>
-    <InventoryIcon texture="%ModDir%/images/nuclearshell.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir:2683843415%/images/nuclearshell.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
     <!--改图标-->
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,131,217,33" depth="0.55" origin="0.5,0.5" />
     <!--改引用-->
     <Body width="215" height="30" density="35" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="50" severlimbsprobability="50" penetration="0.5" targetforce="1000">
@@ -120,15 +114,15 @@
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" setvalue="true" allowwhenbroken="true">
         <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
         <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
-        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="20" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
+        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="20" debris="true" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
         <!--改断肢率-->
           <Affliction identifier="explosiondamage" strength="1000" />
           <Affliction identifier="burn" strength="1000" />
           <Affliction identifier="radiationsickness" strength="100" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" multiplybymaxvitality="true" dividebylimbcount="false" />
           <Affliction identifier="stun" strength="30" />
-          <Affliction identifier="explosiondamage" strength="15" multiplybymaxvitality="true" />
-          <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
+          <Affliction identifier="explosiondamage" strength="12.5" multiplybymaxvitality="true" />
+          <Affliction identifier="burn" strength="12.5" multiplybymaxvitality="true" />
         </Explosion>
         <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
           <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
@@ -160,14 +154,14 @@
   <Item name="" identifier="alienshell" tags="railgunequipment,railgunammo" cargocontaineridentifier="heavycrate" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
-    <Price baseprice="330" minleveldifficulty="35">
+    <Price baseprice="385" minleveldifficulty="35">
     <!--改价格，中期有售-->
       <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
       <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
-      <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="3" />
-      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="5" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="5" />
     </Price>
     <Deconstruct time="20">
       <Item identifier="physicorium" />
@@ -191,7 +185,7 @@
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="1,170,216,34" depth="0.55" origin="0.5,0.5" />
     <!--改引用-->
     <Body width="215" height="30" density="35" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <Projectile characterusable="false" launchimpulse="0" damagedoors="true">
       <Attack structuredamage="200" itemdamage="200" severlimbsprobability="200" penetration="0.8" targetforce="1000">
@@ -231,30 +225,27 @@
   <Item name="" identifier="railguncanistershell" tags="railgunequipment,railgunammo,containershell" cargocontaineridentifier="heavycrate" category="Weapon" linkable="true" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" minamount="1" maxamount="2" spawnprobability="0.2" />
-    <Price baseprice="59" minavailable="3">
+    <Price baseprice="50" minavailable="3">
     <!--改价格，出售数量-->
       <Price storeidentifier="merchantoutpost" multiplier="1.2" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.2" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="5" />
-      <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="5" />
+      <Price storeidentifier="merchantmine" multiplier="1.2" />
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="5" />
     </Price>
     <Deconstruct time="10">
-      <Item identifier="lead" mincondition="0.95" />
-      <Item identifier="iron" />
-      <Item identifier="carbon" />
-      <!--改产出-->
+      <Item identifier="steel" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
-      <RequiredItem identifier="lead" />
+      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
       <RequiredItem identifier="steel" />
       <!--改配方-->
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="8">
       <RequiredSkill identifier="weapons" level="20" />
-      <RequiredItem identifier="lead" />
+      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
       <RequiredItem tag="containershell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
       <!--按tag取材料，给扩展mod用的-->
     </Fabricate>
@@ -262,7 +253,7 @@
     <BrokenSprite texture="Content/Items/Containers/containers2.png" sourcerect="799,744,216,34" depth="0.55" origin="0.5,0.5" maxcondition="0" />
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="0,447,64,64" origin="0.5,0.5" />
     <Body width="215" height="30" density="35" />
-    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <!--改可放栏位-->
     <ItemContainer hideitems="true" capacity="24" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" spawnwithid="railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet,railguncanistershellpellet">
     <!--改弹丸数量-->

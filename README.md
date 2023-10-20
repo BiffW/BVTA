@@ -29,6 +29,10 @@ It also makes a lot of balance changes to make their capability match the prices
   - Nuclear Shell's explosion afflicts much more damage
   - Canister Shell contains 24 pellets instead of 11
 
+* Explosives
+  - Added extra damage against abyss creature
+  - Optimized IC-4, Compound N(and Volatile) to update at an interval of 1 second instead of running every frame.
+  
 * Flak Cannon
   - Steel shrapnel spread decreased
   - Directional shrapnel count increased

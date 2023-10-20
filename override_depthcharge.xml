@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <!-- 深水炸弹 -->
-  <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
+  <Item name="" identifier="depthchargeshell" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="120" minavailable="1">
@@ -10,6 +10,7 @@
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" maxavailable="4" />
     </Price>
     <Deconstruct time="10">
       <Item identifier="iron" />
@@ -41,7 +42,7 @@
       <StatusEffect type="OnBroken" target="Contained">
         <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
         <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
-        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
           <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
           <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
           <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
@@ -66,15 +67,16 @@
     </Quality>
   </Item>
   <!-- 核深水炸弹 -->
-  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10">
+  <Item name="" identifier="nucleardepthcharge" tags="depthchargeammo,nucleardepthchargeammo" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="450" sold="false">
       <Price storeidentifier="merchantoutpost" multiplier="1.35" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
-      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="2" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" maxavailable="2" />
     </Price>
     <Deconstruct time="20">
       <Item identifier="iron" />
@@ -86,12 +88,6 @@
       <RequiredItem identifier="iron" amount="2" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="ic4block" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
-      <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="iron" amount="2" />
-      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
-      <RequiredItem identifier="uex" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="130,1,129,88" depth="0.55" origin="0.5,0.5" />
@@ -109,7 +105,11 @@
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="this">
-        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0"
+        <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="5000" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="this">
+        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" debris="true" decal="explosion" decalsize="1.0"
            camerashake="1000" camerashakerange="50000"
            flashrange="10000" flashduration="5.0"
            screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">
@@ -147,28 +147,50 @@
       <QualityStat stattype="ExplosionDamage" value="0.1" />
     </Quality>
   </Item>
+  <!-- 廉价核深水炸弹 -->
+  <Item name="" identifier="nucleardepthchargecheap" nameidentifier="nucleardepthcharge" variantof="nucleardepthcharge" hideineditors="true">
+    <Price baseprice="280" sold="false">
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+      <Price sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="uranium" />
+      <!-- clear the rest of the deconstruction -->
+      <Item />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+      <RequiredSkill identifier="electrical" level="40" />
+      <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="fuelrod" mincondition="0.8" usecondition="false" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
+  </Item>
   <!-- 诱饵 -->
-  <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" health="200" indestructible="true">
+  <Item name="" identifier="depthdecoyshell" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" health="200" indestructible="true" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
-    <Price baseprice="270" minavailable="2">
+    <Price baseprice="100" minavailable="2">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" />
       <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" />
     </Price>
     <Deconstruct time="10">
       <Item identifier="iron" />
-      <Item identifier="sonarbeacon" />
-      <Item identifier="uex" />
+      <Item identifier="fpgacircuit" />
       <!--改产出-->
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
       <RequiredItem identifier="iron" amount="2" />
-      <RequiredItem identifier="sonarbeacon" />
-      <RequiredItem identifier="uex" />
+      <RequiredItem identifier="fpgacircuit" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="267,64,41,61" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="138,380,129,88" depth="0.55" origin="0.5,0.5" />
@@ -181,21 +203,14 @@
       <!--改发射冲量-->
       <StatusEffect type="OnUse" target="This" IsOn="true" Indestructible="false" />
       <StatusEffect type="OnUse" target="This" IsOn="false" delay="45" setvalue="true" condition="-200" />
+      <StatusEffect type="OnImpact" target="This" Condition="-200.0" disabledeltatime="true" />
       <StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
         <particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.2" scalemax="0.35" />
         <Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="Contained">
-        <Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
-          <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
-          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
-          <Affliction identifier="stun" strength="7" />
-          <Affliction identifier="explosiondamage" strength="10" multiplybymaxvitality="true" />
-        </Explosion>
-        <!--加爆炸-->
-        <Use />
         <particleemitter particle="shrapnel" drawontop="true" particleamount="100" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.2" scalemax="0.35" />
+        <Use />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This" delay="0.01">
         <Remove />
@@ -217,28 +232,29 @@
     </Quality>
   </Item>
   <!-- 核诱饵 -->
-  <Item name="" identifier="nucleardepthdecoy" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="200">
+  <Item name="" identifier="nucleardepthdecoy" tags="depthchargeammo,decoy" category="Weapon" sonarsize="5" scale="0.4" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="200" cargocontaineridentifier="">
     <Upgrade gameversion="0.20.4.0" scale="0.4" />
     <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
     <Price baseprice="590" sold="false">
       <Price storeidentifier="merchantoutpost" multiplier="1.35" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
-      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="2" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" maxavailable="2" />
     </Price>
     <Deconstruct time="20">
       <Item identifier="iron" />
       <Item identifier="uranium" />
       <Item identifier="incendium" />
-      <Item identifier="sonarbeacon" />
+      <Item identifier="fpgacircuit" />
       <!--改产出-->
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="10">
       <!--改加工时间-->
       <RequiredSkill identifier="weapons" level="40" />
-      <RequiredItem identifier="nucleardepthcharge" />
-      <RequiredItem identifier="sonarbeacon" />
+      <RequiredItem tag="nucleardepthchargeammo" defaultitem="nucleardepthcharge" />
+      <RequiredItem identifier="fpgacircuit" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="64,704,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="270,379,129,88" depth="0.55" origin="0.5,0.5" />
@@ -263,7 +279,7 @@
       <StatusEffect type="OnBroken" target="this">
         <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
         <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
-        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0"
+        <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" debris="true" decal="explosion" decalsize="1.0"
            camerashake="1000" camerashakerange="50000"
            flashrange="10000" flashduration="5.0"
            screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.5">

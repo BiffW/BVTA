@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Better Vanilla Turret Ammo" modversion="1.0.15" corepackage="False" steamworkshopid="2683843415" gameversion="1.0.8.0">
+<contentpackage name="Better Vanilla Turret Ammo" modversion="1.0.16" corepackage="False" steamworkshopid="2683843415" gameversion="1.1.18.0">
   <Item file="%ModDir%/override_chaingun.xml" />
   <Item file="%ModDir%/override_coilgun.xml" />
   <Item file="%ModDir%/override_depthcharge.xml" />
+  <Item file="%ModDir%/override_explosives.xml" />
   <Item file="%ModDir%/override_flakcannon.xml" />
   <Item file="%ModDir%/override_pulselaser.xml" />
   <Item file="%ModDir%/override_railgun.xml" />
