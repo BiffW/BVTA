@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Override>
-    <!-- UEX -->
+    <!-- UEX:提高对巨兽伤害 -->
     <Item name="" identifier="uex" category="Weapon" description="" Scale="0.5" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
-        <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
+        <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.1" />
         <PreferredContainer secondary="armcab" />
         <Price baseprice="95" minavailable="4" minleveldifficulty="5">
             <Price storeidentifier="merchantoutpost" multiplier="1.4" minavailable="2" />
@@ -15,7 +15,7 @@
             <Price storeidentifier="merchantarmory" multiplier="0.9" minleveldifficulty="0" />
         </Price>
         <Fabricate suitablefabricators="fabricator" requiredtime="20">
-            <RequiredSkill identifier="weapons" level="60" />
+            <RequiredSkill identifier="weapons" level="50" />
             <RequiredItem identifier="sodium" />
             <RequiredItem identifier="phosphorus" />
         </Fabricate>
@@ -33,8 +33,9 @@
                     <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="7" />
+                </Explosion>
+                <Explosion range="500.0" DistanceFalloff="false" penetration="0.5" shockwave="true" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false">
                     <Affliction identifier="explosiondamage" strength="8" multiplybymaxvitality="true" />
-                    <!--add some damage-->
                 </Explosion>
                 <Remove />
             </StatusEffect>
@@ -47,11 +48,11 @@
             <QualityStat stattype="ExplosionDamage" value="0.1" />
         </Quality>
     </Item>
-    <!-- C4 -->
+    <!-- C4:提高对巨兽伤害 -->
     <Item name="" identifier="c4block" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
-        <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.05" />
+        <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
         <PreferredContainer secondary="armcab" />
         <Price baseprice="160">
             <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
@@ -75,13 +76,14 @@
                 <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="8000" />
                 <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="8000" />
                 <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="8000" />
-                <Explosion range="750.0" ballastfloradamage="200" structuredamage="300" itemdamage="1000" force="20" severlimbsprobability="2" debris="true" decal="explosion" decalsize="0.75" penetration="0.5">
+                <Explosion range="750.0" ballastfloradamage="150" structuredamage="300" itemdamage="1000" force="20" severlimbsprobability="2" debris="true" decal="explosion" decalsize="0.75" penetration="0.5">
                     <Affliction identifier="explosiondamage" strength="250" />
-                    <Affliction identifier="burn" strength="30" probability="0.2" dividebylimbcount="false" />
+                    <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="10" />
+                </Explosion>
+                <Explosion range="750.0" DistanceFalloff="false" penetration="0.5" shockwave="true" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false">
                     <Affliction identifier="explosiondamage" strength="12" multiplybymaxvitality="true" />
-                    <!--add some damage-->
                 </Explosion>
                 <Remove />
             </StatusEffect>
@@ -94,11 +96,11 @@
             <QualityStat stattype="ExplosionDamage" value="0.1" />
         </Quality>
     </Item>
-    <!-- 叠氮化合物 -->
+    <!-- 叠氮化合物:提高对巨兽伤害 -->
     <Item name="" identifier="compoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" secondary="armcab" />
-        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.01" />
+        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.01" />
         <Price baseprice="150">
             <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" />
             <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
@@ -117,7 +119,7 @@
         <Sprite texture="Content/Items/Weapons/weapons_new.png" depth="0.55" sourcerect="101,476,49,34" origin="0.5,0.5" />
         <Body width="45" height="30" density="20" />
         <Throwable characterusable="false" slots="Any,RightHand,LeftHand" throwforce="3.5" canbecombined="true" removeoncombined="true" aimpos="35,-10" msg="ItemMsgPickUpSelect">
-            <StatusEffect type="OnFire" target="This" Condition="-50.0" interval="1" disabledeltatime="true" />
+            <StatusEffect type="OnFire" target="This" Condition="0.0" setvalue="true" delay="0.5" />
             <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
             <StatusEffect type="OnBroken" target="This">
                 <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
@@ -128,8 +130,9 @@
                     <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="7" />
+                </Explosion>
+                <Explosion range="500.0" DistanceFalloff="false" penetration="0.5" shockwave="true" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false">
                     <Affliction identifier="explosiondamage" strength="8" multiplybymaxvitality="true" />
-                    <!--add some damage-->
                 </Explosion>
                 <Remove />
             </StatusEffect>
@@ -142,11 +145,11 @@
             <QualityStat stattype="ExplosionDamage" value="0.1" />
         </Quality>
     </Item>
-    <!-- 挥发性叠氮化合物 -->
-    <Item name="" identifier="volatilecompoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+    <!-- 挥发性叠氮化合物:提高对巨兽伤害 -->
+    <Item name="" identifier="volatilecompoundn" category="Weapon,Material" Tags="smallitem,explosive,demolitionsexpert" impacttolerance="2" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" secondary="armcab" />
-        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.01" />
+        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.01" />
         <Price baseprice="250" sold="false">
             <Price storeidentifier="merchantoutpost" multiplier="1.4" />
             <Price storeidentifier="merchantcity" multiplier="1.25" />
@@ -166,17 +169,19 @@
             <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" type="OnBroken" range="5000" />
             <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" type="OnBroken" range="5000" />
             <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" type="OnBroken" range="5000" />
-            <StatusEffect type="Always" target="This" Condition="-0.35" interval="1" disabledeltatime="true" />
-            <StatusEffect type="OnFire" target="This" Condition="-50.0" interval="1" disabledeltatime="true" />
+            <StatusEffect type="Always" target="This" Condition="-0.04" />
+            <StatusEffect type="OnImpact" target="This" Condition="-20" disabledeltatime="true" />
+            <StatusEffect type="OnFire" target="This" Condition="0.0" setvalue="true" delay="0.5" />
             <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
             <StatusEffect type="OnBroken" target="This">
-                <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="15" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
-                    <Affliction identifier="explosiondamage" strength="125" />
-                    <Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
-                    <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
-                    <Affliction identifier="stun" strength="7" />
-                    <Affliction identifier="explosiondamage" strength="8" multiplybymaxvitality="true" />
-                    <!--add some damage-->
+                <Explosion range="500.0" ballastfloradamage="100" structuredamage="150" itemdamage="500" force="18" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
+                    <Affliction identifier="explosiondamage" strength="150" />
+                    <Affliction identifier="burn" strength="20" probability="0.2" dividebylimbcount="false" />
+                    <Affliction identifier="bleeding" strength="50" probability="0.05" dividebylimbcount="false" />
+                    <Affliction identifier="stun" strength="8" />
+                </Explosion>
+                <Explosion range="500.0" DistanceFalloff="false" penetration="0.5" shockwave="true" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false">
+                    <Affliction identifier="explosiondamage" strength="9.6" multiplybymaxvitality="true" />
                 </Explosion>
                 <Remove />
             </StatusEffect>
@@ -189,11 +194,11 @@
             <QualityStat stattype="ExplosionDamage" value="0.1" />
         </Quality>
     </Item>
-    <!-- IC4 -->
+    <!-- IC4:提高对巨兽伤害 -->
     <Item name="" identifier="ic4block" description="" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
         <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
-        <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.02" />
+        <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.02" />
         <PreferredContainer secondary="armcab" />
         <Price baseprice="400" sold="false">
             <Price storeidentifier="merchantoutpost" multiplier="1.4" />
@@ -212,20 +217,21 @@
             <RequiredItem identifier="incendium" />
         </Fabricate>
         <Throwable characterusable="false" slots="Any,RightHand,LeftHand" canbecombined="true" removeoncombined="true" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
-            <StatusEffect type="OnFire" target="This" Condition="-50.0" interval="1" disabledeltatime="true" />
+            <StatusEffect type="OnFire" target="This" Condition="0.0" setvalue="true" delay="0.5" />
             <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
             <StatusEffect type="OnBroken" target="This">
                 <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
                 <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
                 <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
-                <Explosion range="750.0" ballastfloradamage="150" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.25" debris="true" decal="explosion" decalsize="0.5">
+                <Explosion range="750.0" ballastfloradamage="300" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.25" debris="true" decal="explosion" decalsize="0.5">
                     <Affliction identifier="explosiondamage" strength="50" />
-                    <Affliction identifier="burn" strength="100" />
-                    <Affliction identifier="burn" strength="25" probability="0.2" dividebylimbcount="false" />
+                    <Affliction identifier="burn" strength="250" />
+                    <Affliction identifier="burn" strength="30" probability="0.2" dividebylimbcount="false" />
                     <Affliction identifier="stun" strength="7" />
+                </Explosion>
+                <Explosion range="750.0" DistanceFalloff="false" penetration="0.5" shockwave="true" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false">
                     <Affliction identifier="explosiondamage" strength="5" multiplybymaxvitality="true" />
                     <Affliction identifier="burn" strength="10" multiplybymaxvitality="true" />
-                    <!--add some damage-->
                 </Explosion>
                 <Fire size="500" />
                 <Remove />

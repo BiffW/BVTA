@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
-  <!--霰弹-->
+  <!-- 霰弹:缩小扩散 -->
   <Item name="" identifier="flakbolt" category="Weapon" scale="1" sonarsize="2" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
     <Body width="170" height="10" density="20" />
@@ -16,7 +16,6 @@
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <SpawnItem identifier="flakshrapnel" spawnposition="This" count="22" aimspread="60" rotationtype="Collider" rotation="0" />
-        <!--缩小扩散区间-->
         <Explosion range="30.0" structuredamage="20" camerashake="25.0" camerashakerange="2000" force="10.0" itemdamage="15" severlimbsprobability="0.1" decal="explosion" decalsize="0.3">
           <Affliction identifier="explosiondamage" strength="20" />
         </Explosion>
@@ -27,6 +26,7 @@
       </StatusEffect>
       <StatusEffect type="OnActive" target="This" Condition="-100" delay="0.25" stackable="false" />
       <StatusEffect type="OnImpact" target="This" Condition="-100" stackable="false" />
+      <!-- child component of the Projectile = only active when the projectile is active -->
       <MotionSensor range="325" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
         <StatusEffect type="OnNotContained" target="This" condition="-100" disabledeltatime="true" stackable="false" checkconditionalalways="true">
           <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
@@ -34,42 +34,13 @@
       </MotionSensor>
     </Projectile>
   </Item>
-  <!-- 霰弹破片 -->
-  <Item name="" identifier="flakshrapnel" category="Weapon" scale="0.3" sonarsize="1" hideinmenus="true">
-    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
-    <Body width="170" height="10" density="20" />
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-    <Projectile characterusable="false" launchimpulse="22.0" impulsespread="0.2" damagedoors="true">
-      <Attack structuredamage="0" itemdamage="10" severlimbsprobability="0.4" penetration="0.1">
-        <Affliction identifier="lacerations" strength="17" />
-        <Affliction identifier="bleeding" strength="7.5" />
-        <Affliction identifier="stun" strength="0.2" />
-        <Affliction identifier="stun" strength="0.6" probability="0.2" />
-        <!-- 还原击晕 -->
-      </Attack>
-      <StatusEffect type="OnActive" target="This" lifetime="1">
-        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
-      </StatusEffect>
-      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1.8">
-        <Remove />
-      </StatusEffect>
-      <StatusEffect type="OnImpact" target="This">
-        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="1" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
-        <Remove />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This">
-        <Remove />
-      </StatusEffect>
-    </Projectile>
-  </Item>
-  <!--霰弹弹药箱-->
+  <!-- 霰弹弹药箱:调整经济,可放快捷栏 -->
   <Item name="" identifier="flakcannonammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="flakcannonammoloader" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" amount="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.1" />
-    <Price baseprice="140" displaynonempty="true" minleveldifficulty="15">
-      <!--改价格，减少出售数量-->
+    <Price baseprice="148" displaynonempty="true" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="6" sold="false" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" minavailable="3" />
@@ -96,9 +67,11 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="681,878,95,78" origin="0.5,0.5" />
     <Body width="90" height="72" density="30" />
-    <Holdable slots="Any,RightHand,LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位，可合并-->
+    <Holdable canbecombined="true" removeoncombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+    </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <!--  -2.5 per usage = 40 shots per box -->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakbolt" spawnposition="ThisInventory" />
       </StatusEffect>
@@ -108,7 +81,7 @@
       <Containable items="flakbolt" />
     </ItemContainer>
   </Item>
-  <!--集束弹-->
+  <!-- 集束弹:增加破片数 -->
   <Item name="" identifier="flakboltdirectional" category="Weapon" scale="1" sonarsize="2" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
     <Body width="170" height="10" density="20" />
@@ -123,8 +96,7 @@
         <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="5" velocitymin="-10" velocitymax="-100" scalemin="0.9" scalemax="1.5" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
-        <SpawnItem identifier="flakshrapneldirectional" spawnposition="This" count="16" aimspread="35" rotationtype="Collider" rotation="0" />
-        <!--增加破片数，加大扩散-->
+        <SpawnItem identifier="flakshrapneldirectional" spawnposition="This" count="12" aimspread="25" rotationtype="Collider" rotation="0" />
         <Explosion range="30.0" structuredamage="20" camerashake="25.0" camerashakerange="2000" force="10.0" itemdamage="15" severlimbsprobability="0.1" decal="explosion" decalsize="0.3">
           <Affliction identifier="explosiondamage" strength="20" />
         </Explosion>
@@ -136,6 +108,7 @@
       </StatusEffect>
       <StatusEffect type="OnActive" target="This" Condition="-100" delay="0.25" stackable="false" />
       <StatusEffect type="OnImpact" target="This" Condition="-100" stackable="false" />
+      <!-- child component of the Projectile = only active when the projectile is active -->
       <MotionSensor range="325" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
         <StatusEffect type="OnNotContained" target="This" condition="-100" disabledeltatime="true" stackable="false" checkconditionalalways="true">
           <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
@@ -143,12 +116,12 @@
       </MotionSensor>
     </Projectile>
   </Item>
-  <!--集束弹破片-->
+  <!-- 集束弹破片 -->
   <Item name="" identifier="flakshrapneldirectional" category="Weapon" scale="0.6" sonarsize="1" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-    <Projectile characterusable="false" launchimpulse="42.0" impulsespread="0.2" damagedoors="true">
+    <Projectile characterusable="false" launchimpulse="42.0" impulsespread="0.2" damagedoors="true" DamageUser="true">
       <Attack structuredamage="40" itemdamage="50" severlimbsprobability="0.3" penetration="0.5">
         <Affliction identifier="lacerations" strength="30" />
         <Affliction identifier="bleeding" strength="20" />
@@ -158,6 +131,7 @@
       <StatusEffect type="OnActive" target="This" lifetime="1">
         <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
       </StatusEffect>
+      <!-- a 1.8 second lifetime after being fired -->
       <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1.8">
         <Remove />
       </StatusEffect>
@@ -170,19 +144,18 @@
       </StatusEffect>
     </Projectile>
   </Item>
-  <!--集束弹药箱-->
+  <!--集束弹药箱:调整经济,可放快捷栏-->
   <Item name="" identifier="flakcannondirectionalammobox" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" amount="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.05" />
-    <Price baseprice="175" displaynonempty="true" minleveldifficulty="15" minavailable="1">
-      <!--修改出售数量-->
+    <Price baseprice="192" displaynonempty="true" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
-      <Price storeidentifier="merchantresearch" multiplier="1.3" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.3" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" minleveldifficulty="10" />
-      <Price storeidentifier="merchantmine" multiplier="1.2" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.2" />
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" minleveldifficulty="10" />
     </Price>
     <Deconstruct time="10">
@@ -192,7 +165,7 @@
       <RequiredSkill identifier="weapons" level="25" />
       <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
       <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
-      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
       <RequiredItem tag="advmunition_jacket" amount="2" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem identifier="aluminium" />
     </Fabricate>
@@ -200,15 +173,17 @@
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
       <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
-      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
       <RequiredItem tag="advmunition_jacket" amount="2" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem tag="ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannondirectionalammobox" />
     </Fabricate>
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" depth="0.54" sourcerect="528,6,95,78" origin="0.5,0.5" />
     <Body width="90" height="72" density="30" />
-    <Holdable slots="Any,RightHand,LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位，可合并-->
+    <Holdable canbecombined="true" removeoncombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+    </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <!--  -2.5 per usage = 40 shots per box -->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakboltdirectional" spawnposition="ThisInventory" />
       </StatusEffect>
@@ -224,14 +199,13 @@
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" mincondition="1" />
     <PreferredContainer secondary="wreckammoboxcontainer" mincondition="1" spawnprobability="0.01" />
-    <Price baseprice="360" displaynonempty="true" minleveldifficulty="50">
-      <!--改价格，游戏中期有售-->
+    <Price baseprice="390" sold="false" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" />
       <Price storeidentifier="merchantresearch" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" minleveldifficulty="35" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" minleveldifficulty="35" sold="true" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
-      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" minleveldifficulty="35" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" minleveldifficulty="35" sold="true" />
     </Price>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="40" />
@@ -255,9 +229,11 @@
     </Deconstruct>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="800,878,95,78" origin="0.5,0.5" />
     <Body width="90" height="72" density="30" />
-    <Holdable slots="Any,RightHand,LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位，可合并-->
+    <Holdable canbecombined="true" removeoncombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+    </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <!--  -2.5 per usage = 40 shots per box -->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakboltphysicorium" spawnposition="ThisInventory" />
       </StatusEffect>
@@ -267,10 +243,9 @@
       <Containable items="flakboltphysicorium" />
     </ItemContainer>
   </Item>
-  <!-- 爆破弹 -->
+  <!-- 爆破弹:无删减版 -->
   <Item name="" identifier="flakboltexplosive" category="Weapon" scale="1" sonarsize="2" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
-    <!--改贴图引用-->
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="0.0" damagedoors="true">
@@ -285,7 +260,6 @@
       <StatusEffect type="OnBroken" target="This">
         <Conditional Removed="false" />
         <SpawnItem identifier="flakshrapnelexplosive" spawnposition="This" count="16" aimspread="90" rotationtype="Collider" rotation="0" />
-        <!--加点破片，缩减扩散-->
         <Explosion range="30.0" structuredamage="20" force="10.0" camerashake="50.0" camerashakerange="2000" itemdamage="15" severlimbsprobability="0.1" decal="explosion" decalsize="0.3">
           <Affliction identifier="explosiondamage" strength="20" />
         </Explosion>
@@ -296,6 +270,7 @@
       </StatusEffect>
       <StatusEffect type="OnActive" target="This" Condition="-100" delay="0.25" stackable="false" />
       <StatusEffect type="OnImpact" target="This" Condition="-100" stackable="false" />
+      <!-- child component of the Projectile = only active when the projectile is active -->
       <MotionSensor range="325" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
         <StatusEffect type="OnNotContained" target="This" condition="-100" disabledeltatime="true" stackable="false" checkconditionalalways="true">
           <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
@@ -303,14 +278,12 @@
       </MotionSensor>
     </Projectile>
   </Item>
-  <!-- 爆破弹破片 -->
+  <!-- 爆破弹破片:无删减版 -->
   <Item name="" identifier="flakshrapnelexplosive" category="Weapon" scale="0.3" sonarsize="1" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
-    <!--改贴图引用-->
     <Body width="170" height="10" density="20" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-    <Projectile characterusable="false" launchimpulse="12.0" impulsespread="0" damagedoors="true">
-      <!-- 移除冲量扩散，整整齐齐 -->
+    <Projectile characterusable="false" launchimpulse="12.0" impulsespread="0" damagedoors="true" DamageUser="true">
       <Attack structuredamage="20" itemdamage="10" severlimbsprobability="1" penetration="0.1">
         <Affliction identifier="explosiondamage" strength="3" />
         <Affliction identifier="bleeding" strength="2" />
@@ -319,17 +292,17 @@
       <StatusEffect type="OnActive" target="This" lifetime="1">
         <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
       </StatusEffect>
+      <!-- a 1.8 second lifetime after being fired -->
       <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1.8">
         <Remove />
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This">
         <Explosion range="200.0" structuredamage="25" force="15.0" itemdamage="250" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
           <Affliction identifier="explosiondamage" strength="60" />
-          <!--加点伤害-->
           <Affliction identifier="bleeding" strength="30" />
           <Affliction identifier="bleeding" strength="15" probability="0.1" dividebylimbcount="false" />
         </Explosion>
-        <!-- <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="1" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" /> -->
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="1" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
         <Remove />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
@@ -342,7 +315,7 @@
           <Affliction identifier="bleeding" strength="30" />
           <Affliction identifier="bleeding" strength="15" probability="0.1" dividebylimbcount="false" />
         </Explosion>
-        <!-- <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="2" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" /> -->
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="2" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
         <RemoveItem />
       </StatusEffect>
     </Projectile>
@@ -353,19 +326,17 @@
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckflakcannonloader" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.01" />
-    <Price baseprice="435" displaynonempty="true" minleveldifficulty="30">
-      <!--改价格，减少出售数量-->
+    <Price baseprice="467" displaynonempty="true" minleveldifficulty="30">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
       <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.3" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" minleveldifficulty="15" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" minleveldifficulty="15" />
       <Price storeidentifier="merchantmine" sold="false" multiplier="1.2" />
-      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" minleveldifficulty="15" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" minleveldifficulty="15" />
     </Price>
     <Deconstruct time="10">
       <Item identifier="c4block" mincondition="0.95" />
       <Item identifier="c4block" mincondition="0.45" />
-      <!--改产出-->
       <Item identifier="aluminium" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
@@ -382,9 +353,11 @@
     </Fabricate>
     <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="917,878,95,78" origin="0.5,0.5" />
     <Body width="90" height="72" density="30" />
-    <Holdable slots="Any,RightHand,LeftHand" canBeCombined="true" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
-    <!--改可放栏位，可合并-->
+    <Holdable canbecombined="true" removeoncombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+    </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <!--  -2.5 per usage = 40 shots per box -->
       <StatusEffect type="OnUse" target="This" disabledeltatime="true">
         <SpawnItem identifiers="flakboltexplosive" spawnposition="ThisInventory" />
       </StatusEffect>
@@ -392,6 +365,133 @@
         <RequiredItem items="flakboltexplosive" type="Contained" />
       </StatusEffect>
       <Containable items="flakboltexplosive" />
+    </ItemContainer>
+  </Item>
+  <!-- 重力弹:无删减版 -->
+  <Item name="" identifier="flakboltgravity" category="Weapon" scale="1" sonarsize="2" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
+    <Body width="170" height="10" density="20" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" launchimpulse="0.0" damagedoors="true">
+      <Attack structuredamage="50" itemdamage="15" severlimbsprobability="0.25" penetration="0.1">
+        <Affliction identifier="internaldamage" strength="70" />
+        <Affliction identifier="stun" strength="8" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" lifetime="2">
+        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particleamount="5" velocitymin="-10" velocitymax="-100" scalemin="0.9" scalemax="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Conditional Removed="false" />
+        <SpawnItem identifier="flakshrapnelgravity" spawnposition="This" count="1" aimspread="0" rotationtype="Collider" rotation="0" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="20" velocitymin="100" velocitymax="2000" scalemin="1" scalemax="2" />
+        <RemoveItem />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" Condition="-100" delay="0.25" stackable="false" />
+      <StatusEffect type="OnImpact" target="This" Condition="-100" stackable="false" />
+      <!-- child component of the Projectile = only active when the projectile is active -->
+      <MotionSensor range="125" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="OnNotContained" target="This" condition="-100" disabledeltatime="true" stackable="false" checkconditionalalways="true">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        </StatusEffect>
+      </MotionSensor>
+    </Projectile>
+  </Item>
+  <!-- 重力弹重力球:无删减版 -->
+  <Item name="" identifier="flakshrapnelgravity" category="Weapon" scale="0.3" sonarsize="1" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" color="0,0,0,255" />
+    <Body width="10" height="10" density="10" />
+    <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.5" damagedoors="true">
+      <StatusEffect type="OnSpawn" target="This">
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_boom.ogg" volume="2" range="25000" type="OnUse" />
+        <!-- initial "explosion" -->
+        <ParticleEmitter particle="cyborgammotracer" particleamount="25" anglemin="0" anglemax="360" distancemin="0" distancemax="150" scalemin="1" scalemax="2.5" velocitymin="-50" velocitymax="0" />
+        <ParticleEmitter particle="gravityshellfx" particleamount="100" anglemin="0" anglemax="360" distancemin="0" distancemax="0" scalemin="0.1" scalemax="1" />
+        <!-- just camera shake and some particles-->
+        <Explosion range="1000.0" structuredamage="0" force="0.0" camerashake="50.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <!-- sound and effects for a duration -->
+      <StatusEffect type="Always" target="This" duration="1.5" stackable="false">
+        <ParticleEmitter particle="gravityshellfx" particlespersecond="15" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" stackable="false">
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_loop.ogg" volume="2" range="10000.0" loop="true" />
+      </StatusEffect>
+      <!-- a 2 second lifetime after being fired, another explosion at the end -->
+      <StatusEffect type="OnSpawn" target="This" stackable="false" delay="2">
+        <ParticleEmitter particle="cyborgammotracer" particleamount="150" anglemin="0" anglemax="360" distancemin="0" distancemax="150" scalemin="1" scalemax="3" velocitymin="-50" velocitymax="0" />
+        <Explosion range="200.0" structuredamage="50" force="50" camerashake="80.0" camerashakerange="2000" itemdamage="50" severlimbsprobability="0.5" penetration="0.5" decal="explosion" underwaterbubble="false" decalsize="0.5">
+          <Affliction identifier="internaldamage" strength="100" />
+          <Affliction identifier="stun" strength="4" />
+        </Explosion>
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_explosion.ogg" volume="2" dontmuffle="true" range="50000" />
+        <Remove />
+      </StatusEffect>
+    </Projectile>    
+    <!--Apply force towards the center, affecting creatures, humans and items -->
+    <TriggerComponent triggeredby="Creature,Human,Item" force="300" radius="1800" distancebasedforce="false" />
+    <!--Start damaging entities -->
+    <TriggerComponent triggeredby="Creature,Human,Item" force="0" radius="1000">
+      <Attack>
+        <Affliction identifier="radiationsickness" strength="15" />
+      </Attack>
+    </TriggerComponent>
+    <!--Heavily damage entities close to the center-->
+    <TriggerComponent triggeredby="Creature,Human,Item" force="0" radius="200">
+      <Attack>
+        <Affliction identifier="internaldamage" strength="60" />
+        <Affliction identifier="stun" strength="1" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="cyborgammotracer" particlespersecond="5" anglemin="0" anglemax="360" distancemin="0" distancemax="50" scalemin="1" scalemax="2.5" velocitymin="-50" velocitymax="0" />
+        <sound file="Content/Items/Weapons/GRAVITYSHELLS_damageLoop.ogg" volume="2" range="10000.0" loop="true" />
+      </StatusEffect>
+    </TriggerComponent>
+  </Item>
+  <!-- 重力弹药箱:调整经济,可放快捷栏 -->
+  <Item name="" identifier="flakcannonammoboxgravity" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <PreferredContainer primary="flakcannonammoloader" mincondition="1" />
+    <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
+    <PreferredContainer secondary="wreckflakcannonloader" mincondition="1" />
+    <PreferredContainer secondary="wreckammoboxcontainer" mincondition="1" spawnprobability="0.01" />
+    <Price baseprice="559" sold="false" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.3" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" minleveldifficulty="50" sold="true" />
+      <Price storeidentifier="merchantmine" multiplier="1.2" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" minleveldifficulty="50" sold="true" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="dementonite" mincondition="0.95" />
+      <Item identifier="dementonite" mincondition="0.45" />
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="dementonite" amount="2" />
+      <RequiredItem tag="advmunition_jacket" amount="2" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="dementonite" amount="2" />
+      <RequiredItem tag="advmunition_jacket" amount="2" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem tag="ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxexplosive" />
+    </Fabricate>
+    <Sprite texture="Content/Items/Containers/containers2.png" depth="0.54" sourcerect="149,93,97,78" origin="0.5,0.5" />
+    <Body width="95" height="78" density="30" />
+    <Holdable canbecombined="true" removeoncombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <!--  -5 per usage = 20 shots per box -->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="flakboltgravity" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-5" disabledeltatime="true">
+        <RequiredItem items="flakboltgravity" type="Contained" />
+      </StatusEffect>
+      <Containable items="flakboltgravity" />
     </ItemContainer>
   </Item>
 </Override>
