@@ -98,11 +98,12 @@
       <StatValue stattype="MovementSpeed" value="-0.2" />
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="pulselaserbolt">
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="pulselaserbolt" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
         <RequiredItem items="pulselaserbolt" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="pulselaserbolt" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="pulselaserbolt" />
     </ItemContainer>
@@ -141,11 +142,12 @@
       <StatValue stattype="MovementSpeed" value="-0.2" />
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="pulselaserbolttrilaser">
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="pulselaserbolttrilaser" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
         <RequiredItem items="pulselaserbolttrilaser" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="pulselaserbolttrilaser" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="pulselaserbolttrilaser" />
     </ItemContainer>

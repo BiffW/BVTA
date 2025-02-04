@@ -96,11 +96,12 @@
       but spawn a new round every time the OnUse effect is triggered. OnUse also reduces the condition
       of the item, and when the condition is 0, the box is considered empty. -->
       <!--  -0.5 per usage = 200 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="coilgunbolt" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.5" disabledeltatime="true">
         <RequiredItem items="coilgunbolt" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="coilgunbolt" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="coilgunbolt" />
     </ItemContainer>
@@ -145,11 +146,12 @@
       but spawn a new round every time the OnUse effect is triggered. OnUse also reduces the condition
       of the item, and when the condition is 0, the box is considered empty. -->
       <!--  -0.5 per usage = 200 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="physicoriumbolt" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.5" disabledeltatime="true">
         <RequiredItem items="physicoriumbolt" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="physicoriumbolt" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="physicoriumbolt" />
     </ItemContainer>
@@ -195,11 +197,12 @@
       but spawn a new round every time the OnUse effect is triggered. OnUse also reduces the condition
       of the item, and when the condition is 0, the box is considered empty. -->
       <!--  -0.67 per usage = about 150 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="coilgunboltexplosive" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.5" disabledeltatime="true">
         <RequiredItem items="coilgunboltexplosive" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="coilgunboltexplosive" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="coilgunboltexplosive" />
     </ItemContainer>
@@ -243,11 +246,12 @@
       but spawn a new round every time the OnUse effect is triggered. OnUse also reduces the condition
       of the item, and when the condition is 0, the box is considered empty. -->
       <!--  -0.67 per usage = about 150 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="coilgunboltpiercing" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.5" disabledeltatime="true">
         <RequiredItem items="coilgunboltpiercing" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="coilgunboltpiercing" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="coilgunboltpiercing" />
     </ItemContainer>
@@ -285,11 +289,12 @@
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <!--  -35 per usage = 3 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="coilgunharpoon" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-35" disabledeltatime="true">
         <RequiredItem items="coilgunharpoon" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="coilgunharpoon" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="coilgunharpoon" />
     </ItemContainer>
@@ -330,11 +335,12 @@
       <StatValue stattype="MovementSpeed" value="-0.2" />
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="depletedfuelbolt">
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="depletedfuelbolt" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.5" disabledeltatime="true">
         <RequiredItem items="depletedfuelbolt" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="depletedfuelbolt" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="depletedfuelbolt" />
     </ItemContainer>

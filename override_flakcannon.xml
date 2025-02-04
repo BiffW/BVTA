@@ -72,11 +72,12 @@
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <!--  -2.5 per usage = 40 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="flakbolt" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
         <RequiredItem items="flakbolt" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="flakbolt" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="flakbolt" />
     </ItemContainer>
@@ -184,11 +185,12 @@
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <!--  -2.5 per usage = 40 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="flakboltdirectional" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
         <RequiredItem items="flakboltdirectional" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="flakboltdirectional" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="flakboltdirectional" />
     </ItemContainer>
@@ -234,11 +236,12 @@
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <!--  -2.5 per usage = 40 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="flakboltphysicorium" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
         <RequiredItem items="flakboltphysicorium" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="flakboltphysicorium" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="flakboltphysicorium" />
     </ItemContainer>
@@ -358,11 +361,12 @@
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <!--  -2.5 per usage = 40 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="flakboltexplosive" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true">
         <RequiredItem items="flakboltexplosive" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="flakboltexplosive" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="flakboltexplosive" />
     </ItemContainer>
@@ -399,7 +403,7 @@
   <!-- 重力弹重力球:无删减版 -->
   <Item name="" identifier="flakshrapnelgravity" category="Weapon" scale="0.3" sonarsize="1" hideinmenus="true">
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" color="0,0,0,255" />
-    <Body width="10" height="10" density="10" />
+    <Body width="10" height="10" density="10" gravityscale="0" />
     <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.5" damagedoors="true">
       <StatusEffect type="OnSpawn" target="This">
         <sound file="Content/Items/Weapons/GRAVITYSHELLS_boom.ogg" volume="2" range="25000" type="OnUse" />
@@ -485,11 +489,12 @@
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <!--  -5 per usage = 20 shots per box -->
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="flakboltgravity" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-5" disabledeltatime="true">
         <RequiredItem items="flakboltgravity" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="flakboltgravity" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="flakboltgravity" />
     </ItemContainer>

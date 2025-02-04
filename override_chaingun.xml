@@ -125,11 +125,12 @@
       <StatValue stattype="MovementSpeed" value="-0.2" />
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="chaingunbolt">
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="chaingunbolt" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.20" disabledeltatime="true">
         <RequiredItem items="chaingunbolt" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="chaingunbolt" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="chaingunbolt" />
     </ItemContainer>
@@ -170,11 +171,12 @@
       <StatValue stattype="MovementSpeed" value="-0.2" />
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="chaingunboltphysicorium">
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="chaingunboltphysicorium" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.20" disabledeltatime="true">
         <RequiredItem items="chaingunboltphysicorium" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="chaingunboltphysicorium" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="chaingunboltphysicorium" />
     </ItemContainer>
@@ -214,11 +216,12 @@
       <StatValue stattype="MovementSpeed" value="-0.2" />
     </Holdable>
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" SpawnWithId="chaingunboltshredder">
-      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
-        <SpawnItem identifiers="chaingunboltshredder" spawnposition="ThisInventory" />
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-0.20" disabledeltatime="true">
         <RequiredItem items="chaingunboltshredder" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="chaingunboltshredder" spawnposition="ThisInventory" />
+        <Conditional condition="gt 0"/>
       </StatusEffect>
       <Containable items="chaingunboltshredder" />
     </ItemContainer>

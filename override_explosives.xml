@@ -3,7 +3,7 @@
     <!-- UEX:提高对巨兽伤害 -->
     <Item name="" identifier="uex" category="Weapon" description="" Scale="0.5" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
-        <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+        <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" notpvp="true" />
         <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.1" />
         <PreferredContainer secondary="armcab" />
         <Price baseprice="95" minavailable="4" minleveldifficulty="5">
@@ -51,7 +51,7 @@
     <!-- C4:提高对巨兽伤害 -->
     <Item name="" identifier="c4block" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
-        <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+        <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" notpvp="true" />
         <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.05" />
         <PreferredContainer secondary="armcab" />
         <Price baseprice="160">
@@ -197,7 +197,7 @@
     <!-- IC4:提高对巨兽伤害 -->
     <Item name="" identifier="ic4block" description="" category="Weapon" Tags="smallitem,explosive,demolitionsexpert" maxstacksize="32" maxstacksizecharacterinventory="8" Scale="0.5" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
         <Upgrade gameversion="0.9.3.0" scale="0.5" />
-        <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+        <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" notpvp="true" />
         <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" amount="1" spawnprobability="0.02" />
         <PreferredContainer secondary="armcab" />
         <Price baseprice="400" sold="false">

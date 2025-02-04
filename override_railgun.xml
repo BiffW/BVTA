@@ -314,6 +314,9 @@
         <Conditional condition="gte 50" />
         <SpawnItem identifiers="railguncanistershellpellet" count="15" spawnposition="ThisInventory" />
       </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <DropItem />
+      </StatusEffect>
       <Containable items="railguncanistershellpellet" />
     </ItemContainer>
   </Item>
@@ -422,6 +425,21 @@
   <Item name="" identifier="railgunharpoon" tags="railgunequipment,railgunammo" health="20" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="heavycrate">
     <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
     <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
+    <Price baseprice="175">
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false"/>
+      <Price storeidentifier="merchantresearch" multiplier="1.3" minavailable="4"/>
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6"/>
+      <Price storeidentifier="merchantmine" multiplier="1.2" minavailable="4"/>
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6"/>
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredItem identifier="iron" />
+      <RequiredItem identifier="ballisticfiber" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber"/>
+    </Deconstruct>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,320,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="538,209,219,29" depth="0.55" origin="0.5,0.5" />
     <Body width="215" height="30" density="30" />
@@ -437,9 +455,8 @@
         <Conditional InWater="false" />
       </StatusEffect>
     </Holdable>
-    <Rope targetpullforce="200000" sourcepullforce="10000" projectilepullforce="10" maxlength="10000" snaponcollision="true" spritewidth="10" BarrelLengthMultiplier="0.3" origin="0.05,0.5" tile="true">
-      <Sprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="617,352,174,32" depth="0.57" origin="0.5,0.5" />
-      <!-- <EndSprite texture="Content/Map/Thalamus/thalamus.png" sourcerect="672,288,32,64" depth="0.56" origin="0.5,0.5" /> -->
+    <Rope targetpullforce="80000" IncreaseForceForEscapingTargets="false" sourcepullforce="60000" projectilepullforce="10" maxlength="8000" lerpforces="true" snaponcollision="true" spritewidth="10" BarrelLengthMultiplier="0.3" origin="0.05,0.5" tile="true">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="428,242,81,24" depth="0.57" origin="0.5,0.5" />
       <SnapSound file="Content/Items/Weapons/HarpoonGun1.ogg" range="500" frequencymultiplier="3.0,4.0"/>
       <ReelSound file="Content/Items/Weapons/WEAPON_harpoonGunReelLoop.ogg" range="5000" ReelSoundPitchSlide="0.7,1.0"/>
       <!-- Automatically snap after 20 seconds -->
@@ -455,12 +472,20 @@
         <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
       </StatusEffect>
     </Rope>
-    <Projectile characterusable="false" launchimpulse="50.0" sticktostructures="true" sticktocharacters="true" sticktodeflective="true" sticktodoors="true" maxtargetstohit="1" JointBreakPoint="100000">
+    <Projectile characterusable="false" launchimpulse="50.0"
+                sticktostructures="true" sticktocharacters="true" sticktodeflective="true" sticktodoors="true"
+                StickToLightTargets="false" GoThroughLightTargets="true" LightTargetMassThreshold="0.15"
+                maxtargetstohit="1" JointBreakPoint="100000">
       <Attack structuredamage="300" itemdamage="50" severlimbsprobability="0.1">
         <Affliction identifier="lacerations" strength="100" />
         <Affliction identifier="bleeding" strength="100" />
         <Affliction identifier="stun" strength="1.5" />
       </Attack>
+      <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And" disabledeltatime="true">
+        <Conditional Snapped="false" />
+        <Conditional mass="lt 300" />
+        <Affliction identifier="drag" strength="1" />
+      </StatusEffect>
       <StatusEffect type="OnImpact" target="This">
         <Sound file="Content/Map/Thalamus/Sounds/CARRIER_harpoonHit1.ogg" range="1000" selectionmode="Random" />
         <Sound file="Content/Map/Thalamus/Sounds/CARRIER_harpoonHit2.ogg" range="1000" />

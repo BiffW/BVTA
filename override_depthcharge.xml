@@ -341,7 +341,6 @@
     <Deconstruct time="10">
       <Item identifier="iron" />
       <Item identifier="uranium" />
-      <Item identifier="fpgacircuit" />
       <!-- clear the rest of the deconstruction -->
       <Item />
     </Deconstruct>
@@ -409,7 +408,7 @@
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
       <Containable items="smallitem" />
     </ItemContainer>
-    <Controller UserPos="0,-20" direction="Right" canbeselected="true" AllowSelectingWhenSelectedByOther="false" selectkey="Use" drawuserbehind="true" forceusertostayattached="true" msg="itemmsggoinside">
+    <Controller UserPos="0,-20" direction="Right" canbeselected="true" AllowSelectingWhenSelectedByBot="false" AllowSelectingWhenSelectedByOther="false" selectkey="Use" drawuserbehind="true" forceusertostayattached="true" msg="itemmsggoinside">
       <limbposition limb="Head" position="74,-40" />
       <limbposition limb="Torso" position="74,-40" />
       <limbposition limb="Waist" position="74,-40" />

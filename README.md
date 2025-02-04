@@ -1,15 +1,16 @@
 # BVTA
-A mod for indie game Barotrauma  
+A mod for Barotrauma  
 
-This mod overrides every ammunition type for turrets to make them more convenient to use and easier to get
+This mod overrides every ammunition type for turrets to make them more singleplayer-friendly
 
 * Overall
-  - Both ammoboxes and railgun shells can be put in the hotbar slots
+  - All ammoboxes and railgun shells can be put in the hotbar slots
   - Economy changes (mostly cheaper, some more expensive)
 
 * Railgun shells
-  - Crossover with Backpacks(a highly recommended mod). All shells you purchased will be delivered in a heavy crate.
+  - Crossover with Backpacks(a high-quality backpack mod). All shells you purchased will be delivered in a heavy crate.
   - Nuclear shell now have a new inventory icon (no more unawared nuclear shots)
+  - Canister Shell now ejects itself when emptied.
 
 * Chaingun Shredder Ammunition Box
   - Restored red label (I personally don't like the green one)
@@ -27,7 +28,7 @@ It also makes a lot of balance changes to make their capability match their pric
   - Deal extra damage against abyss creature
   
 * Flak Cannon
-  - Steel shrapnel spread decreased
+  - Basic shrapnel spread decreased
   - Directional shrapnel count increased
   - Physicorium Ammo Box can be bought on higher difficulty
   - Explosive shrapnel count and damage increased, spread decreased
